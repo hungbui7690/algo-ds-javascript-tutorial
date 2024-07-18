@@ -1,0 +1,2524 @@
+Frequency Counter - sameFrequency
+
+Write a function called sameFrequency. Given two positive integers, find out if the two numbers have the same frequency of digits.
+
+Your solution MUST have the following complexities:
+
+Time: O(N)
+
+Sample Input:
+
+    sameFrequency(182,281) // true
+    sameFrequency(34,14) // false
+    sameFrequency(3589578, 5879385) // true
+    sameFrequency(22,222) // false
+
+
+///////////////////////////////////////////
+
+Frequency Counter / Multiple Pointers - areThereDuplicates
+
+Implement a function called, areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in.  You can solve this using the frequency counter pattern OR the multiple pointers pattern.
+
+Examples:
+
+    areThereDuplicates(1, 2, 3) // false
+    areThereDuplicates(1, 2, 2) // true 
+    areThereDuplicates('a', 'b', 'c', 'a') // true 
+
+Restrictions:
+
+Time - O(n)
+
+Space - O(n)
+
+Bonus:
+
+Time - O(n log n)
+
+Space - O(1)
+
+///////////////////////////////////////////
+
+Multiple Pointers - averagePair
+
+Write a function called averagePair. Given a sorted array of integers and a target average, determine if there is a pair of values in the array where the average of the pair equals the target average. There may be more than one pair that matches the average target.
+
+Bonus Constraints:
+
+Time: O(N)
+
+Space: O(1)
+
+Sample Input:
+
+    averagePair([1,2,3],2.5) // true
+    averagePair([1,3,3,5,6,7,10,12,19],8) // true
+    averagePair([-1,0,3,4,5,6], 4.1) // false
+    averagePair([],4) // false
+
+///////////////////////////////////////////
+
+Multiple Pointers - isSubsequence
+
+Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string form a subsequence of the characters in the second string. In other words, the function should check whether the characters in the first string appear somewhere in the second string, without their order changing.
+
+Examples:
+
+    isSubsequence('hello', 'hello world'); // true
+    isSubsequence('sing', 'sting'); // true
+    isSubsequence('abc', 'abracadabra'); // true
+    isSubsequence('abc', 'acb'); // false (order matters)
+
+Your solution MUST have AT LEAST the following complexities:
+
+Time Complexity - O(N + M)
+
+Space Complexity - O(1)
+
+///////////////////////////////////////////
+
+Sliding Window - maxSubarraySum
+
+Given an array of integers and a number, write a function called maxSubarraySum, which finds the maximum sum of a subarray with the length of the number passed to the function.
+
+Note that a subarray must consist of consecutive elements from the original array. In the first example below, [100, 200, 300] is a subarray of the original array, but [100, 300] is not.
+
+    maxSubarraySum([100,200,300,400], 2) // 700
+    maxSubarraySum([1,4,2,10,23,3,1,0,20], 4)  // 39 
+    maxSubarraySum([-3,4,0,-2,6,-1], 2) // 5
+    maxSubarraySum([3,-2,7,-4,1,-1,4,-2,1],2) // 5
+    maxSubarraySum([2,3], 3) // null
+
+Constraints:
+
+Time Complexity - O(N)
+
+Space Complexity - O(1)
+
+///////////////////////////////////////////
+
+Sliding Window - minSubArrayLen
+
+Write a function called minSubArrayLen which accepts two parameters - an array of positive integers and a positive integer.
+
+This function should return the minimal length of a contiguous subarray of which the sum is greater than or equal to the integer passed to the function. If there isn't one, return 0 instead.
+Examples:
+
+    minSubArrayLen([2,3,1,2,4,3], 7) // 2 -> because [4,3] is the smallest subarray
+    minSubArrayLen([2,1,6,5,4], 9) // 2 -> because [5,4] is the smallest subarray
+    minSubArrayLen([3,1,7,11,2,9,8,21,62,33,19], 52) // 1 -> because [62] is greater than 52
+    minSubArrayLen([1,4,16,22,5,7,8,9,10],39) // 3
+    minSubArrayLen([1,4,16,22,5,7,8,9,10],55) // 5
+    minSubArrayLen([4, 3, 3, 8, 1, 2, 3], 11) // 2
+    minSubArrayLen([1,4,16,22,5,7,8,9,10],95) // 0
+
+Time Complexity - O(n)
+
+Space Complexity - O(1)
+
+///////////////////////////////////////////
+
+Sliding Window - findLongestSubstring
+
+Write a function called findLongestSubstring, which accepts a string and returns the length of the longest substring with all distinct characters.
+
+    findLongestSubstring('') // 0
+    findLongestSubstring('rithmschool') // 7
+    findLongestSubstring('thisisawesome') // 6
+    findLongestSubstring('thecatinthehat') // 7
+    findLongestSubstring('bbbbbb') // 1
+    findLongestSubstring('longestsubstring') // 8
+    findLongestSubstring('thisishowwedoit') // 6
+
+Time Complexity - O(n)
+
+///////////////////////////////////////////
+
+power
+
+Write a function called power which accepts a base and an exponent. The function should return the power of the base to the exponent. This function should mimic the functionality of Math.pow()  - do not worry about negative bases and exponents.
+
+// power(2,0) // 1
+// power(2,2) // 4
+// power(2,4) // 16
+
+
+///////////////////////////////////////////
+
+factorial
+
+Write a function factorial which accepts a number and returns the factorial of that number. A factorial is the product of an integer and all the integers below it; e.g., factorial four ( 4! ) is equal to 24, because 4 * 3 * 2 * 1 equals 24.  factorial zero (0!) is always 1.
+
+//factorial(1) // 1
+// factorial(2) // 2
+// factorial(4) // 24
+// factorial(7) // 5040
+
+///////////////////////////////////////////
+
+productOfArray
+
+Write a function called productOfArray which takes in an array of numbers and returns the product of them all.
+
+// productOfArray([1,2,3]) // 6
+// productOfArray([1,2,3,10]) // 60
+
+///////////////////////////////////////////
+
+recursiveRange
+
+Write a function called recursiveRange which accepts a number and adds up all the numbers from 0 to the number passed to the function 
+
+// SAMPLE INPUT/OUTPUT
+// recursiveRange(6) // 21
+// recursiveRange(10) // 55 
+
+///////////////////////////////////////////
+
+fib
+
+Write a recursive function called fib which accepts a number and returns the nth number in the Fibonacci sequence. Recall that the Fibonacci sequence is the sequence of whole numbers 1, 1, 2, 3, 5, 8, ... which starts with 1 and 1, and where every number thereafter is equal to the sum of the previous two numbers.
+
+// fib(4) // 3
+// fib(10) // 55
+// fib(28) // 317811
+// fib(35) // 9227465
+
+///////////////////////////////////////////
+
+RECURSION
+
+reverse
+
+Write a recursive function called reverse which accepts a string and returns a new string in reverse.
+
+// reverse('awesome') // 'emosewa'
+// reverse('rithmschool') // 'loohcsmhtir'
+
+///////////////////////////////////////////
+
+RECURSION
+
+isPalindrome
+
+Write a recursive function called isPalindrome which returns true if the string passed to it is a palindrome (reads the same forward and backward). Otherwise it returns false.
+
+// isPalindrome('awesome') // false
+// isPalindrome('foobar') // false
+// isPalindrome('tacocat') // true
+// isPalindrome('amanaplanacanalpanama') // true
+// isPalindrome('amanaplanacanalpandemonium') // false
+
+///////////////////////////////////////////
+
+RECURSION
+
+someRecursive
+
+Write a recursive function called someRecursive which accepts an array and a callback. The function returns true if a single value in the array returns true when passed to the callback. Otherwise it returns false.
+
+// SAMPLE INPUT / OUTPUT
+// const isOdd = val => val % 2 !== 0;
+
+// someRecursive([1,2,3,4], isOdd) // true
+// someRecursive([4,6,8,9], isOdd) // true
+// someRecursive([4,6,8], isOdd) // false
+// someRecursive([4,6,8], val => val > 10); // false
+
+///////////////////////////////////////////
+
+RECURSION
+
+flatten
+
+Write a recursive function called flatten which accepts an array of arrays and returns a new array with all values flattened.
+
+// flatten([1, 2, 3, [4, 5] ]) // [1, 2, 3, 4, 5]
+// flatten([1, [2, [3, 4], [[5]]]]) // [1, 2, 3, 4, 5]
+// flatten([[1],[2],[3]]) // [1,2,3]
+// flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) // [1,2,3
+
+///////////////////////////////////////////
+
+RECURSION
+
+capitalizeFirst
+
+Write a recursive function called capitalizeFirst. Given an array of strings, capitalize the first letter of each string in the array.
+
+// capitalizeFirst(['car','taco','banana']); // ['Car','Taco','Banana']
+
+///////////////////////////////////////////
+
+RECURSION
+
+nestedEvenSum
+
+Write a recursive function called nestedEvenSum. Return the sum of all even numbers in an object which may contain nested objects.
+
+var obj1 = {
+  outer: 2,
+  obj: {
+    inner: 2,
+    otherObj: {
+      superInner: 2,
+      notANumber: true,
+      alsoNotANumber: "yup"
+    }
+  }
+}
+
+var obj2 = {
+  a: 2,
+  b: {b: 2, bb: {b: 3, bb: {b: 2}}},
+  c: {c: {c: 2}, cc: 'ball', ccc: 5},
+  d: 1,
+  e: {e: {e: 2}, ee: 'car'}
+};
+
+nestedEvenSum(obj1); // 6
+nestedEvenSum(obj2); // 10
+
+///////////////////////////////////////////
+
+RECURSION
+
+capitalizeWords
+
+Write a recursive function called capitalizeWords. Given an array of words, return a new array containing each word capitalized.
+
+// let words = ['i', 'am', 'learning', 'recursion'];
+// capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
+
+///////////////////////////////////////////
+
+RECURSION
+
+stringifyNumbers
+
+Write a function called stringifyNumbers which takes in an object and finds all of the values which are numbers and converts them to strings. Recursion would be a great way to solve this!
+
+/*
+let obj = {
+    num: 1,
+    test: [],
+    data: {
+        val: 4,
+        info: {
+            isRight: true,
+            random: 66
+        }
+    }
+}
+/*
+
+stringifyNumbers(obj)
+
+/*
+{
+    num: "1",
+    test: [],
+    data: {
+        val: "4",
+        info: {
+            isRight: true,
+            random: "66"
+        }
+    }
+}
+*/
+
+///////////////////////////////////////////
+
+RECURSION
+
+collectStrings
+
+Write a function called collectStrings which accepts an object and returns an array of all the values in the object that have a typeof string
+
+const obj = {
+    stuff: "foo",
+    data: {
+        val: {
+            thing: {
+                info: "bar",
+                moreInfo: {
+                    evenMoreInfo: {
+                        weMadeIt: "baz"
+                    }
+                }
+            }
+        }
+    }
+}
+
+collectStrings(obj) // ["foo", "bar", "baz"])
+
+///////////////////////////////////////////
+
+DLL push - Exercise
+
+Implement the following on the DoublyLinkedList class
+
+push
+
+This function should accept a value add a node to the end of the DoublyLinkedList with the given value. It should return the DoublyLinkedList.
+
+Examples
+
+    var doublyLinkedList = new DoublyLinkedList;
+    doublyLinkedList.push(5); // doublyLinkedList
+    doublyLinkedList.length; // 1
+    doublyLinkedList.head.val; // 5
+    doublyLinkedList.tail.val; // 5
+    doublyLinkedList.head.prev // null
+    doublyLinkedList.push(10); doublyLinkedList 
+    doublyLinkedList.length; // 2
+    doublyLinkedList.head.val; // 5
+    doublyLinkedList.head.next.val; // 10
+    doublyLinkedList.tail.val; // 10
+    doublyLinkedList.head.next.prev.val // 10
+    doublyLinkedList.push(15); doublyLinkedList
+    doublyLinkedList.length; // 3
+    doublyLinkedList.head.val; // 5
+    doublyLinkedList.tail.val; // 15
+    doublyLinkedList.tail.prev.val; // 10
+    doublyLinkedList.head.next.next.val; // 15
+     
+    doublyLinkedList.pop().val; // 15
+    doublyLinkedList.length; // 2
+    doublyLinkedList.pop().val; // 10
+    doublyLinkedList.length; // 1
+    doublyLinkedList.pop().val; // 5
+    doublyLinkedList.length; // 0
+    doublyLinkedList.pop(); // undefined
+    doublyLinkedList.length; // 0
+
+///////////////////////////////////////////
+
+DLL unshift - Exercise
+
+Implement the following on the DoublyLinkedList class
+
+unshift
+
+This function should accept a value and add a node to the beginning of the DoublyLinkedList with the given value. It should return the DoublyLinkedList.
+
+Examples
+
+    var doublyLinkedList = new DoublyLinkedList;
+    doublyLinkedList.unshift(5); // doublyLinkedList
+    doublyLinkedList.length; // 1
+    doublyLinkedList.head.val; // 5
+    doublyLinkedList.tail.val; // 5
+    doublyLinkedList.unshift(10); doublyLinkedList 
+    doublyLinkedList.length; // 2
+    doublyLinkedList.head.val; // 10
+    doublyLinkedList.head.next.val; // 5
+    doublyLinkedList.tail.val; // 5
+    doublyLinkedList.unshift(15); doublyLinkedList
+    doublyLinkedList.length; // 3
+    doublyLinkedList.head.val; // 15
+    doublyLinkedList.tail.val; // 5
+    doublyLinkedList.head.next.next.val; // 5
+
+
+///////////////////////////////////////////
+
+DLL shift - Exercise
+
+Implement the following on the DoublyLinkedList class
+
+shift
+
+This function should remove a node at the beginning of the DoublyLinkedList. It should return the node removed.
+
+Examples
+
+    var doublyLinkedList = new DoublyLinkedList;
+    doublyLinkedList.unshift(5); // doublyLinkedList
+    doublyLinkedList.length; // 1
+    doublyLinkedList.head.val; // 5
+    doublyLinkedList.tail.val; // 5
+    doublyLinkedList.unshift(10); doublyLinkedList 
+    doublyLinkedList.length; // 2
+    doublyLinkedList.head.val; // 10
+    doublyLinkedList.head.next.val; // 5
+    doublyLinkedList.tail.val; // 5
+    doublyLinkedList.unshift(15); doublyLinkedList
+    doublyLinkedList.length; // 3
+    doublyLinkedList.head.val; // 15
+    doublyLinkedList.tail.val; // 5
+    doublyLinkedList.head.next.next.val; // 5
+     
+    doublyLinkedList.shift().val; // 15
+    doublyLinkedList.length; // 2
+    doublyLinkedList.shift().val; // 10
+    doublyLinkedList.length; // 1
+    doublyLinkedList.shift().val; // 5
+    doublyLinkedList.length; // 0
+    doublyLinkedList.pop(); // undefined
+    doublyLinkedList.length; // 0
+
+///////////////////////////////////////////
+
+DLL set - Exercise
+
+Implement the following on the DoublyLinkedList.prototype
+
+set
+
+This function should accept an index and a value and update the value of the node in the DoublyLinkedList at the index with the new value. It should return true if the node is updated successfully, or false if an invalid index is passed in.
+
+Examples
+
+(Note: you don't need to re-implement push, the tests will be provided with it.)
+
+    var doublyLinkedList = new DoublyLinkedList();
+     
+    doublyLinkedList.push(5).push(10).push(15).push(20);
+    doublyLinkedList.set(0,10) // true
+    doublyLinkedList.length // 4
+    doublyLinkedList.head.val // 10
+     
+    doublyLinkedList.set(10,10) // false
+     
+    doublyLinkedList.set(2,100) // true
+    doublyLinkedList.head.next.next.val; // 100
+
+///////////////////////////////////////////
+
+DLL- remove Exercise
+
+Implement the following on the DoublyLinkedList class
+
+remove
+
+This function should remove a node at a specified index in a DoublyLinkedList. It should return the removed node. if the index is valid, or undefined if the index is invalid.
+
+reverse
+
+This function should reverse all of the nodes in a DoublyLinkedList, and should return the list.
+
+Examples
+
+(Note: you don't need to re-implement push, the tests will be provided with it)
+
+    var doublyLinkedList = new DoublyLinkedList;
+    doublyLinkedList.push(5).push(10).push(15).push(20);
+    doublyLinkedList.remove(2).val; // 15
+    doublyLinkedList.remove(100); // undefined
+    doublyLinkedList.length // 3
+    doublyLinkedList.head.val // 5
+    doublyLinkedList.head.next.val // 10
+    doublyLinkedList.head.next.next.val // 20
+
+///////////////////////////////////////////
+
+DLL pop - Exercise
+
+Implement the following on the DoublyLinkedList class
+
+pop
+
+This function should remove a node at the end of the DoublyLinkedList. It should return the node removed.
+
+Examples
+
+    var doublyLinkedList = new DoublyLinkedList;
+    doublyLinkedList.push(5); // doublyLinkedList
+    doublyLinkedList.length; // 1
+    doublyLinkedList.head.val; // 5
+    doublyLinkedList.tail.val; // 5
+    doublyLinkedList.head.prev // null
+    doublyLinkedList.push(10); doublyLinkedList 
+    doublyLinkedList.length; // 2
+    doublyLinkedList.head.val; // 5
+    doublyLinkedList.head.next.val; // 10
+    doublyLinkedList.tail.val; // 10
+    doublyLinkedList.head.next.prev.val // 10
+    doublyLinkedList.push(15); doublyLinkedList
+    doublyLinkedList.length; // 3
+    doublyLinkedList.head.val; // 5
+    doublyLinkedList.tail.val; // 15
+    doublyLinkedList.tail.prev.val; // 10
+    doublyLinkedList.head.next.next.val; // 15
+     
+    doublyLinkedList.pop().val; // 15
+    doublyLinkedList.length; // 2
+    doublyLinkedList.pop().val; // 10
+    doublyLinkedList.length; // 1
+    doublyLinkedList.pop().val; // 5
+    doublyLinkedList.length; // 0
+    doublyLinkedList.pop(); // undefined
+    doublyLinkedList.length; // 0
+
+///////////////////////////////////////////
+
+DLL get - Exercise
+
+Implement the following on the DoublyLinkedList.prototype
+
+get
+
+This internal/helper function should find a node at a specified index in a DoublyLinkedList. It should return the found node.
+
+Examples
+
+(Note: you don't need to re-implement push, the tests will be provided with it.)
+
+    var doublyLinkedList = new DoublyLinkedList();
+     
+    doublyLinkedList.push(5).push(10).push(15).push(20);
+    doublyLinkedList.get(0).val // 5
+    doublyLinkedList.get(1).val // 10
+    doublyLinkedList.get(2).val // 15
+    doublyLinkedList.get(3).val // 20
+    doublyLinkedList.get(4) // null
+
+
+///////////////////////////////////////////
+
+Doubly Linked Lists insert / remove - Exercise
+
+Implement the following on the DoublyLinkedList class
+
+insert
+
+This internal/helper function should insert a node at a specified index in a DoublyLinkedList. It should return true if the index is valid, and false if the index is invalid (less than 0 or greater than the length of the list).
+
+remove
+
+This function should remove a node at a specified index in a DoublyLinkedList. It should return the removed node. if the index is valid, or undefined if the index is invalid.
+
+    var doublyLinkedList = new DoublyLinkedList;
+    doublyLinkedList.push(5).push(10).push(15).push(20);
+    doublyLinkedList.insert(2,12); // true
+    doublyLinkedList.insert(100,12); // false
+    doublyLinkedList.length // 5
+    doublyLinkedList.head.val // 5
+    doublyLinkedList.head.next.val // 10
+    doublyLinkedList.head.next.next.val // 12
+    doublyLinkedList.head.next.next.next.val // 15
+    doublyLinkedList.head.next.next.next.next.val // 20
+     
+    var doublyLinkedList = new DoublyLinkedList;
+    doublyLinkedList.push(5).push(10).push(15).push(20);
+    doublyLinkedList.remove(2).val; // 15
+    doublyLinkedList.remove(100); // undefined
+    doublyLinkedList.length // 3
+    doublyLinkedList.head.val // 5
+    doublyLinkedList.head.next.val // 10
+    doublyLinkedList.head.next.next.val // 20
+
+///////////////////////////////////////////
+
+DLL reverse - Exercise
+
+reverse
+
+This function should reverse all of the nodes in a DoublyLinkedList, and should return the list.
+
+    let doublyLinkedList = new DoublyLinkedList;
+    doublyLinkedList.push(5).push(10).push(15).push(20)
+    doublyLinkedList.reverse(); // singlyLinkedList;
+    doublyLinkedList.length; // 4
+    doublyLinkedList.head.val); // 20
+    doublyLinkedList.head.next.val; // 15
+    doublyLinkedList.head.next.next.val; // 10
+    doublyLinkedList.head.next.next.next.val; // 5
+
+///////////////////////////////////////////
+
+SLL - push Exercise
+
+Implement the following on the SinglyLinkedList class:
+
+push
+
+This function should take in a value and add a node to the end of the SinglyLinkedList. It should return the SinglyLinkedList.
+
+Examples
+
+    var singlyLinkedList = new SinglyLinkedList();
+     
+    singlyLinkedList.push(5); // singlyLinkedList
+    singlyLinkedList.length; // 1
+    singlyLinkedList.head.val; // 5
+    singlyLinkedList.tail.val; // 5
+     
+    singlyLinkedList.push(10); // singlyLinkedList
+    singlyLinkedList.length; // 2
+    singlyLinkedList.head.val; // 5
+    singlyLinkedList.head.next.val; // 10
+    singlyLinkedList.tail.val; // 10
+     
+    singlyLinkedList.push(15); // singlyLinkedList
+    singlyLinkedList.length; // 3
+    singlyLinkedList.head.val; // 5
+    singlyLinkedList.head.next.val; // 10
+    singlyLinkedList.head.next.next.val; // 15
+    singlyLinkedList.tail.val; // 15
+
+///////////////////////////////////////////
+
+SLL - pop exercise
+
+Implement the following on the SinglyLinkedList.prototype:
+
+pop
+
+This function should remove a node at the end of the SinglyLinkedList. It should return the node removed.
+
+Examples
+
+    var singlyLinkedList = new SinglyLinkedList();
+     
+    singlyLinkedList.push(5); // singlyLinkedList
+    singlyLinkedList.length; // 1
+    singlyLinkedList.head.val; // 5
+    singlyLinkedList.tail.val; // 5
+     
+    singlyLinkedList.push(10); // singlyLinkedList
+    singlyLinkedList.length; // 2
+    singlyLinkedList.head.val; // 5
+    singlyLinkedList.head.next.val; // 10
+    singlyLinkedList.tail.val; // 10
+     
+    singlyLinkedList.push(15); // singlyLinkedList
+    singlyLinkedList.length; // 3
+    singlyLinkedList.head.val; // 5
+    singlyLinkedList.head.next.val; // 10
+    singlyLinkedList.head.next.next.val; // 15
+    singlyLinkedList.tail.val; // 15
+     
+    singlyLinkedList.pop().val; // 15
+    singlyLinkedList.tail.val; // 10
+    singlyLinkedList.length; // 2
+    singlyLinkedList.pop().val; // 10
+    singlyLinkedList.length; // 1
+    singlyLinkedList.pop().val; // 5
+    singlyLinkedList.length; // 0
+    singlyLinkedList.pop(); // undefined
+    singlyLinkedList.length; // 0
+
+///////////////////////////////////////////
+
+SLL - get Exercise
+
+Implement the following on the SinglyLinkedList class
+
+get
+
+This function should find a node at a specified index in a SinglyLinkedList. It should return the found node.
+
+    var singlyLinkedList = new SinglyLinkedList();
+     
+    singlyLinkedList.push(5).push(10).push(15).push(20);
+    singlyLinkedList.get(0).val // 5
+    singlyLinkedList.get(1).val // 10
+    singlyLinkedList.get(2).val // 15
+    singlyLinkedList.get(3).val // 20
+    singlyLinkedList.get(4) // null
+	
+///////////////////////////////////////////
+
+SLL - insert Exercise
+
+Implement the following on the SinglyLinkedList class
+
+insert
+
+This should insert a node at a specified index in a SinglyLinkedList. It should return true if the index is valid, and false if the index is invalid (less than 0 or greater than the length of the list).
+
+Examples
+
+(Note: you don't need to re-implement push, the tests will be provided with it)
+
+    var singlyLinkedList = new SinglyLinkedList;
+    singlyLinkedList.push(5).push(10).push(15).push(20);
+    singlyLinkedList.insert(2,12); // true
+    singlyLinkedList.insert(100,12); // false
+    singlyLinkedList.length // 5
+    singlyLinkedList.head.val // 5
+    singlyLinkedList.head.next.val // 10
+    singlyLinkedList.head.next.next.val // 12
+    singlyLinkedList.head.next.next.next.val // 15
+    singlyLinkedList.head.next.next.next.next.val // 20
+     
+    singlyLinkedList.insert(5,25); // true
+    singlyLinkedList.head.next.next.next.next.next.val //25
+    singlyLinkedList.tail.val // 25
+	
+///////////////////////////////////////////
+
+SLL - Rotate Exercise
+
+Implement the following on the SinglyLinkedList class
+
+rotate
+
+This function should rotate all the nodes in the list by some number passed in. For instance, if your list looks like 1 -> 2 -> 3 -> 4 -> 5 and you rotate by 2, the list should be modified to 3 -> 4 -> 5 -> 1 -> 2. The number passed in to rotate can be any integer.
+
+Time Complexity: O(N), where N is the length of the list.
+
+Space Complexity: O(1)
+
+Examples
+
+(Note: push is implemented to help you test your rotate function)
+
+    var singlyLinkedList = new SinglyLinkedList;
+    singlyLinkedList.push(5).push(10).push(15).push(20).push(25);
+    singlyLinkedList.head.val; // 5
+    singlyLinkedList.tail.val; // 25;
+     
+    singlyLinkedList.rotate(3);
+    singlyLinkedList.head.val; // 20
+    singlyLinkedList.head.next.val; // 25
+    singlyLinkedList.head.next.next.val; // 5
+    singlyLinkedList.head.next.next.next.val; // 10
+    singlyLinkedList.head.next.next.next.next.val; // 15
+    singlyLinkedList.tail.val; // 15
+    singlyLinkedList.tail.next; // null
+
+    var singlyLinkedList = new SinglyLinkedList;
+    singlyLinkedList.push(5).push(10).push(15).push(20).push(25);
+    singlyLinkedList.head.val; // 5
+    singlyLinkedList.tail.val; // 25;
+     
+    singlyLinkedList.rotate(-1);
+    singlyLinkedList.head.val; // 25
+    singlyLinkedList.head.next.val; // 5
+    singlyLinkedList.head.next.next.val; // 10
+    singlyLinkedList.head.next.next.next.val; // 15
+    singlyLinkedList.head.next.next.next.next.val; // 20
+    singlyLinkedList.tail.val; // 20
+    singlyLinkedList.tail.next // null
+
+    var singlyLinkedList = new SinglyLinkedList;
+    singlyLinkedList.push(5).push(10).push(15).push(20).push(25);
+    singlyLinkedList.head.val; // 5
+    singlyLinkedList.tail.val; // 25;
+     
+    singlyLinkedList.rotate(1000);
+    singlyLinkedList.head.val; // 5
+    singlyLinkedList.head.next.val; // 10
+    singlyLinkedList.head.next.next.val; // 15
+    singlyLinkedList.head.next.next.next.val; // 20
+    singlyLinkedList.head.next.next.next.next.val; // 25
+    singlyLinkedList.tail.val; // 25
+    singlyLinkedList.tail.next // null
+
+
+///////////////////////////////////////////
+
+SLL - set Exercise
+
+Implement the following on the SinglyLinkedList class
+
+set
+
+This function should accept an index and a value and update the value of the node in the SinglyLinkedList at the index with the new value. It should return true if the node is updated successfully, or false if an invalid index is passed in.
+
+Examples
+
+(Note: you don't need to re-implement push, the tests will be provided with it)
+
+    var singlyLinkedList = new SinglyLinkedList();
+     
+    singlyLinkedList.set(0,10) // true
+    singlyLinkedList.set(1,2) // true
+    singlyLinkedList.length // 2
+    singlyLinkedList.head.val // 10
+     
+    singlyLinkedList.set(10,10) // false
+     
+    singlyLinkedList.set(3,100) // true
+    singlyLinkedList.head.next.next.next.val; // 10
+
+
+///////////////////////////////////////////
+
+
+Divide and Conquer - countZeroes
+
+Given an array of 1s and 0s which has all 1s first followed by all 0s, write a function called countZeroes, which returns the number of zeroes in the array.
+
+    countZeroes([1,1,1,1,0,0]) // 2
+    countZeroes([1,0,0,0,0]) // 4
+    countZeroes([0,0,0]) // 3
+    countZeroes([1,1,1,1]) // 0
+
+Time Complexity - O(log n) 
+
+
+
+
+///////////////////////////////////////////
+
+
+
+Divide and Conquer - sortedFrequency
+
+Given a sorted array and a number, write a function called sortedFrequency that counts the occurrences of the number in the array
+
+    sortedFrequency([1,1,2,2,2,2,3],2) // 4 
+    sortedFrequency([1,1,2,2,2,2,3],3) // 1 
+    sortedFrequency([1,1,2,2,2,2,3],1) // 2 
+    sortedFrequency([1,1,2,2,2,2,3],4) // -1
+
+Time Complexity - O(log n)
+
+
+///////////////////////////////////////////
+
+
+Divide and Conquer - findRotatedIndex
+
+Write a function called findRotatedIndex which accepts a rotated array of sorted numbers and an integer. The function should return the index of the integer in the array. If the value is not found, return -1.
+
+Constraints:
+
+Time Complexity - O(log n)
+
+Space Complexity - O(1)
+
+    findRotatedIndex([3,4,1,2],4) // 1
+    findRotatedIndex([6, 7, 8, 9, 1, 2, 3, 4], 8) // 2
+    findRotatedIndex([6, 7, 8, 9, 1, 2, 3, 4], 3) // 6
+    findRotatedIndex([37,44,66,102,10,22],14) // -1
+    findRotatedIndex([6, 7, 8, 9, 1, 2, 3, 4], 12) // -1
+    findRotatedIndex([11,12,13,14,15,16,3,5,7,9], 16) // 5
+
+
+///////////////////////////////////////////
+
+
+
+Bubble Sort
+
+ATTEMPT THIS IS YOU ARE UP FOR IT! Implement a function called bubbleSort. Given an array, bubbleSort will sort the values in the array. The function takes 2 parameters: an array and an optional comparator function.
+
+    function bubbleSort(arr, comparator) {
+      if (typeof comparator !== 'function') {
+        // provide a default
+      }
+    }
+
+The comparator function is a callback that will take two values from the array to be compared. The function returns a negative value if the first value is less than the second, a positive value if the first value is greater than the second, and 0 if both values are equal.
+
+The default comparator you provide should assume that the two parameters are numbers and that we are sorting the values from smallest to largest.
+
+Bubble sort is an O(n^2) algorithm. You can read more about it here: https://www.rithmschool.com/courses/javascript-computer-science-fundamentals/basic-sorting-algorithms
+
+Examples
+
+    bubbleSort([4, 20, 12, 10, 7, 9]); // [4, 7, 9, 10, 12, 20]
+    bubbleSort([0, -10, 7, 4]); // [-10, 0, 4, 7]
+    bubbleSort([1, 2, 3]); // [1, 2, 3]
+    bubbleSort([]);
+     
+    var nums = [4, 3, 5, 3, 43, 232, 4, 34, 232, 32, 4, 35, 34, 23, 2, 453, 546, 75, 67, 4342, 32];
+    bubbleSort(nums); // [2, 3, 3, 4, 4, 4, 5, 23, 32, 32, 34, 34, 35, 43, 67, 75, 232, 232, 453, 546, 4342]
+     
+    var kitties = ["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"];
+     
+    function strComp(a, b) {
+      if (a < b) { return -1;}
+      else if (a > b) { return 1;}
+      return 0;
+    }
+     
+    bubbleSort(kitties, strComp); // ["Blue", "Garfield", "Grumpy", "Heathcliff", "LilBub"]
+     
+    var moarKittyData = [{
+      name: "LilBub",
+      age: 7
+    }, {
+      name: "Garfield",
+      age: 40
+    }, {
+      name: "Heathcliff",
+      age: 45
+    }, {
+      name: "Blue",
+      age: 1
+    }, {
+      name: "Grumpy",
+      age: 6
+    }];
+     
+    function oldestToYoungest(a, b) {
+      return b.age - a.age;
+    }
+     
+    bubbleSort(moarKittyData, oldestToYoungest); // sorted by age in descending order
+
+
+
+
+
+
+///////////////////////////////////////////
+
+
+
+Selection Sort
+
+Selection Sort
+
+Here's some guidance for how selection sort should work:
+
+    Assign the first element to be the smallest value (this is called the minimum). It does not matter right now if this actually the smallest value in the array.
+    Compare this item to the next item in the array until you find a smaller number.
+    If a smaller number is found, designate that smaller number to be the new "minimum" and continue until the end of the array.
+    If the "minimum" is not the value (index) you initially began with, swap the two values. You will now see that the beginning of the array is in the correct order (similar to how after the first iteration of bubble sort, we know the rightmost element is in its correct place).
+    Repeat this with the next element until the array is sorted. 
+
+This algorithm has a O(n^2) time complexity. You can read more about them here: https://www.rithmschool.com/courses/javascript-computer-science-fundamentals/basic-sorting-algorithms
+
+Examples
+
+    selectionSort([4, 20, 12, 10, 7, 9]); // [4, 7, 9, 10, 12, 20]
+    selectionSort([0, -10, 7, 4]); // [-10, 0, 4, 7]
+    selectionSort([1, 2, 3]); // [1, 2, 3]
+    selectionSort([]);
+     
+    var nums = [4, 3, 5, 3, 43, 232, 4, 34, 232, 32, 4, 35, 34, 23, 2, 453, 546, 75, 67, 4342, 32];
+    selectionSort(nums); // [2, 3, 3, 4, 4, 4, 5, 23, 32, 32, 34, 34, 35, 43, 67, 75, 232, 232, 453, 546, 4342]
+     
+    var kitties = ["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"];
+     
+    function strComp(a, b) {
+      if (a < b) { return -1;}
+      else if (a > b) { return 1;}
+      return 0;
+    }
+     
+    selectionSort(kitties, strComp); // ["Blue", "Garfield", "Grumpy", "Heathcliff", "LilBub"]
+     
+    var moarKittyData = [{
+      name: "LilBub",
+      age: 7
+    }, {
+      name: "Garfield",
+      age: 40
+    }, {
+      name: "Heathcliff",
+      age: 45
+    }, {
+      name: "Blue",
+      age: 1
+    }, {
+      name: "Grumpy",
+      age: 6
+    }];
+     
+    function oldestToYoungest(a, b) {
+      return b.age - a.age;
+    }
+     
+    selectionSort(moarKittyData, oldestToYoungest); // sorted by age in descending order
+
+
+
+
+
+
+///////////////////////////////////////////
+
+
+
+SLL - remove Exercise
+
+Implement the following on the SinglyLinkedList class
+
+remove
+
+This function should remove a node at a specified index in a SinglyLinkedList. It should return the removed node. if the index is valid, or undefined if the index is invalid.
+
+Examples
+
+(Note: you don't need to re-implement push, the tests will be provided with it)
+
+    var singlyLinkedList = new SinglyLinkedList;
+    singlyLinkedList.push(5).push(10).push(15).push(20);
+    singlyLinkedList.remove(2).val; // 15
+    singlyLinkedList.remove(100); // undefined
+    singlyLinkedList.length // 3
+    singlyLinkedList.head.val // 5
+    singlyLinkedList.head.next.val // 10
+    singlyLinkedList.head.next.next.val // 20
+
+
+
+
+///////////////////////////////////////////
+
+
+
+Insertion Sort
+
+Implement insertionSort  . Given an array, both algorithms will sort the values in the array. The functions take 2 parameters: an array and an optional comparator function. The comparator function is a callback that will take two values from the array to be compared. The function returns a negative value if the first value is less than the second, a positive value if the first value is greater than the second, and 0 if both values are equal. The default comparator you provide should assume that the two parameters are numbers and that we are sorting the values from smallest to largest.
+
+Insertion Sort
+
+Here's some guidance for how insertion sort should work:
+
+    Start by picking the second element in the array (we will assume the first element is the start of the "sorted" portion)
+    Now compare the second element with the one before it and swap if necessary.
+    Continue to the next element and if it is in the incorrect order, iterate through the sorted portion to place the element in the correct place.
+    Repeat until the array is sorted.Implement insertion sort. Your function should accept an array and return an array of sorted values. 
+
+Examples
+
+    insertionSort([4, 20, 12, 10, 7, 9]); // [4, 7, 9, 10, 12, 20]
+    insertionSort([0, -10, 7, 4]); // [-10, 0, 4, 7]
+    insertionSort([1, 2, 3]); // [1, 2, 3]
+    insertionSort([]);
+     
+    var nums = [4, 3, 5, 3, 43, 232, 4, 34, 232, 32, 4, 35, 34, 23, 2, 453, 546, 75, 67, 4342, 32];
+    insertionSort(nums); // [2, 3, 3, 4, 4, 4, 5, 23, 32, 32, 34, 34, 35, 43, 67, 75, 232, 232, 453, 546, 4342]
+     
+    var kitties = ["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"];
+     
+    function strComp(a, b) {
+      if (a < b) { return -1;}
+      else if (a > b) { return 1;}
+      return 0;
+    }
+     
+    insertionSort(kitties, strComp); // ["Blue", "Garfield", "Grumpy", "Heathcliff", "LilBub"]
+     
+    var moarKittyData = [{
+      name: "LilBub",
+      age: 7
+    }, {
+      name: "Garfield",
+      age: 40
+    }, {
+      name: "Heathcliff",
+      age: 45
+    }, {
+      name: "Blue",
+      age: 1
+    }, {
+      name: "Grumpy",
+      age: 6
+    }];
+     
+    function oldestToYoungest(a, b) {
+      return b.age - a.age;
+    }
+     
+    insertionSort(moarKittyData, oldestToYoungest); // sorted by age in descending order
+
+
+
+///////////////////////////////////////////
+
+
+
+Sorting Exercise - merge helper
+
+Given two sorted arrays, write a function called merge which accepts two SORTED arrays and returns a new array with both of the values from each array sorted.
+
+This function should run in O(n + m) time and O(n + m) space and should not modify the parameters passed to it.
+
+As before, the function should default to sorting numbers in ascending order. If you pass in a comparator function as a third argument, this comparator is what will be used. (Note that the input arrays will always be sorted according to the comparator!)
+
+Also, do not use the built in .sort method! We're going to use this helper to implement a sort, so the helper itself shouldn't depend on a sort.
+
+Examples
+
+    var arr1 = [1,3,4,5];
+    var arr2 = [2,4,6,8];
+    merge(arr1,arr2) // [1,2,3,4,4,5,6,8]
+     
+    arr1 // [1,3,4,5];
+    arr2 // [2,4,6,8];
+     
+    var arr3 = [-2,-1,0,4,5,6];
+    var arr4 = [-3,-2,-1,2,3,5,7,8];
+     
+    merge(arr3,arr4); // [-3,-2,-2,-1,-1,0,2,3,4,5,5,6,7,8]
+     
+    var arr5 = [3,4,5]
+    var arr6 = [1,2]
+     
+    merge(arr5,arr6) // [1,2,3,4,5]
+     
+    var names = ["Bob", "Ethel", "Christine"]
+    var otherNames = ["M", "Colt", "Allison", "SuperLongNameOMG"]
+     
+    function stringLengthComparator(str1, str2) {
+      return str1.length - str2.length;
+    }
+     
+    merge(names, otherNames, stringLengthComparator); // ["M", "Bob", "Colt", "Ethel", "Allison", "Christine", "SuperLongNameOMG"]
+
+
+
+
+
+///////////////////////////////////////////
+
+
+
+Merge Sort
+
+Merge Sort
+
+Implement the merge sort algorithm. Given an array, this algorithm will sort the values in the array. The functions take 2 parameters: an array and an optional comparator function.
+
+The comparator function is a callback that will take two values from the array to be compared. The function returns a negative value if the first value is less than the second, a positive value if the first value is greater than the second, and 0 if both values are equal.
+
+The default comparator you provide should assume that the two parameters are numbers and that we are sorting the values from smallest to largest.
+
+Here's some guidance for how merge sort should work:
+
+    Break up the array into halves until you can compare one value with another
+    Once you have smaller sorted arrays, merge those arrays with other sorted pairs until you are back at the full length of the array
+    Once the array has been merged back together, return the merged (and sorted!) array 
+
+In order to implement this function, you'll also need to implement a merge function that takes in two sorted arrays and a comparator and returns a new sorted array. You implemented this function in the previous exercise, so copy and paste that code here.
+
+You can read more merge sort here: https://www.rithmschool.com/courses/javascript-computer-science-fundamentals/intermediate-sorting-algorithms
+
+Examples
+
+    mergeSort([4, 20, 12, 10, 7, 9]); // [4, 7, 9, 10, 12, 20]
+    mergeSort([0, -10, 7, 4]); // [-10, 0, 4, 7]
+    mergeSort([1, 2, 3]); // [1, 2, 3]
+    mergeSort([]);
+     
+    var nums = [4, 3, 5, 3, 43, 232, 4, 34, 232, 32, 4, 35, 34, 23, 2, 453, 546, 75, 67, 4342, 32];
+    mergeSort(nums); // [2, 3, 3, 4, 4, 4, 5, 23, 32, 32, 34, 34, 35, 43, 67, 75, 232, 232, 453, 546, 4342]
+     
+    var kitties = ["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"];
+     
+    function strComp(a, b) {
+      if (a < b) { return -1;}
+      else if (a > b) { return 1;}
+      return 0;
+    }
+     
+    mergeSort(kitties, strComp); // ["Blue", "Garfield", "Grumpy", "Heathcliff", "LilBub"]
+     
+    var moarKittyData = [{
+      name: "LilBub",
+      age: 7
+    }, {
+      name: "Garfield",
+      age: 40
+    }, {
+      name: "Heathcliff",
+      age: 45
+    }, {
+      name: "Blue",
+      age: 1
+    }, {
+      name: "Grumpy",
+      age: 6
+    }];
+     
+    function oldestToYoungest(a, b) {
+      return b.age - a.age;
+    }
+     
+    mergeSort(moarKittyData, oldestToYoungest); // sorted by age in descending order
+
+
+
+
+///////////////////////////////////////////
+
+
+Sorting Exercise - pivot helper
+
+In this exercise, your goal is to implement a function called pivot . This function contains nearly all of the logic you'll need in order to implement Quick Sort in the next exercise.
+
+The pivot  function is responsible for taking an array, setting the pivot value, and mutating the array so that all values less than the pivot wind up to the left of it, and all values greater than the pivot wind up to the right of it. It's also helpful if this helper returns the index of where the pivot value winds up.
+
+For example, if we decide the pivot will always be the first element in the array, it should behave in the following way:
+
+    var arr = [4, 2, 5, 3, 6];
+    pivot(arr); // 2
+    arr; // [3, 2, 4, 5, 6];
+
+In this code, the specifics of how the arr  variable gets mutated are not important. All that matters is that 4 winds up at index 2, with 3 and 2 to the left of it (in any order), and with 5 and 6 to the right of it (in any order).
+
+Hint: When we get to Quick Sort, it will be helpful for the pivot  helper to accept not only an array an an optional comparator, but also an optional start and end index. These should default to 0 and the array length minus 1, respectively. We've provided these to you in the starter code, but their utility may not be apparent yet. That's okay! When you get to implementing Quick Sort, their usefulness will become clearer.
+
+Examples
+
+    var arr1 = [5, 4, 9, 10, 2, 20, 8, 7, 3];
+    var arr2 = [8, 4, 2, 5, 0, 10, 11, 12, 13, 16];
+    var arr3 = ["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"];
+     
+    function strLength(a, b) {
+      return a.length - b.length
+    }
+     
+    pivot(arr1); // 3
+    pivot(arr2); // 4
+    pivot(arr3, strLength); // 1
+     
+    arr1.slice(0, 3).sort((a, b) => a - b); // [2, 3, 4]
+    arr1.slice(3).sort((a, b) => a - b); // [5, 7, 8, 9, 10, 20]
+     
+    arr2.slice(0, 4).sort((a, b) => a - b); // [0, 2, 4, 5]
+    arr2.slice(4).sort((a, b) => a - b); // [8, 10, 11, 12, 13, 16]
+     
+    arr3.slice(0, 1).sort(strLength); // ["Blue"]
+    arr3.slice(1).sort(strLength); // ["LilBub", "Grumpy", "Garfield", "Heathcliff"]
+
+
+
+///////////////////////////////////////////
+
+Quick Sort
+
+The next sorting algorithm we'll consider is Quick Sort. Unfortunately, quicksort is not the most intuitive of algorithms and has a wide range of implementations. It may help to check out this great video from Computerphile for a quick introduction to how quicksort works:https://www.youtube.com/watch?v=XE4VP_8Y0BU
+
+The algorithm is as follows:
+
+    Pick an element in the array and designate it as the "pivot". While there are quite a few options for choosing the pivot. We'll make things simple to start, and will choose the pivot as the first element. This is not an ideal choice, but it makes the algorithm easier to understand for now.
+    Next, compare every other element in the array to the pivot.
+    If it's less than the pivot value, move it to the left of the pivot.
+    If it's greater, move it to the right.
+    Once you have finished comparing, the pivot will be in the right place.
+    Next, recursively call quicksort again with the left and right halves from the pivot until the array is sorted. 
+
+It's easiest to implement Quick Sort with the aid of your pivot  helper from the earlier exercise. This function is responsible for taking an array, setting the pivot value, and mutating the array so that all values less than the pivot wind up to the left of it, and all values greater than the pivot wind up to the right of it. It's also helpful if this helper returns the index of where the pivot value winds up.
+
+The default comparator you provide should assume that the two parameters are numbers and that we are sorting the values from smallest to largest.
+
+Examples
+
+    quickSort([4, 20, 12, 10, 7, 9]); // [4, 7, 9, 10, 12, 20]
+    quickSort([0, -10, 7, 4]); // [-10, 0, 4, 7]
+    quickSort([1, 2, 3]); // [1, 2, 3]
+    quickSort([]);
+     
+    var nums = [4, 3, 5, 3, 43, 232, 4, 34, 232, 32, 4, 35, 34, 23, 2, 453, 546, 75, 67, 4342, 32];
+    quickSort(nums); // [2, 3, 3, 4, 4, 4, 5, 23, 32, 32, 34, 34, 35, 43, 67, 75, 232, 232, 453, 546, 4342]
+     
+    var kitties = ["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"];
+     
+    function strComp(a, b) {
+      if (a < b) { return -1;}
+      else if (a > b) { return 1;}
+      return 0;
+    }
+     
+    quickSort(kitties, strComp); // ["Blue", "Garfield", "Grumpy", "Heathcliff", "LilBub"]
+     
+    var moarKittyData = [{
+      name: "LilBub",
+      age: 7
+    }, {
+      name: "Garfield",
+      age: 40
+    }, {
+      name: "Heathcliff",
+      age: 45
+    }, {
+      name: "Blue",
+      age: 1
+    }, {
+      name: "Grumpy",
+      age: 6
+    }];
+     
+    function oldestToYoungest(a, b) {
+      return b.age - a.age;
+    }
+     
+    quickSort(moarKittyData, oldestToYoungest); // sorted by age in descending order
+
+
+
+///////////////////////////////////////////
+
+
+Radix Sort Helper - getDigit
+
+Implement a function called getDigit  which accepts a positive integer and a position, and returns the digit in that number at the given position. The position reads from right to left, so the 0th position corresponds to the rightmost digit.
+
+Examples
+
+    getDigit(12345, 0); // 5
+    getDigit(12345, 1); // 4
+    getDigit(12345, 2); // 3
+    getDigit(12345, 3); // 2
+    getDigit(12345, 4); // 1
+    getDigit(12345, 5); // 0
+     
+    getDigit(8987, 0); // 7
+    getDigit(8987, 1); // 8
+    getDigit(8987, 2); // 9
+    getDigit(8987, 3); // 8
+    getDigit(8987, 4); // 0
+
+///////////////////////////////////////////
+
+Radix Sort Helper - digitCount
+
+Implement a function called digitCount  which accepts a positive integer and returns the number of digits that the integer has.
+
+Examples
+
+    digitCount(1); // 1
+    digitCount(9); // 1
+    digitCount(25); // 2
+    digitCount(314); // 3
+    digitCount(1234); // 4
+    digitCount(77777); // 5
+
+
+///////////////////////////////////////////
+
+Radix Sort Helper - mostDigits
+
+Implement a function called mostDigits  which accepts an array of integers and returns a count of the number of digits for the number in the array with the most digits.
+
+It may help to use your digitCount  code from the previous exercise in this function.
+
+Examples
+
+    mostDigits([1, 9, 10, 100, 99]); // 3
+    mostDigits([100, 1010, 1, 500]); // 4
+    mostDigits([0, 100000, 400, 12, 8]); // 6
+    mostDigits([]); // 0
+
+
+///////////////////////////////////////////
+
+Radix Sort
+
+Finally, you're ready to implement Radix Sort! Write a function called radixSort  which accepts an array of numbers and sorts them in ascending order.
+
+You'll need to make use of the helper functions from the previous exercises here. Good luck!
+
+Examples
+
+    radixSort([8, 6, 1, 12]); // [1, 6, 8, 12]
+    radixSort([10, 100, 1, 1000, 10000000]); // [1, 10, 100, 1000, 10000000]
+    radixSort([902, 4, 7, 408, 29, 9637, 1556, 3556, 8157, 4386, 86, 593]); 
+    // [4, 7, 29, 86, 408, 593, 902, 1556, 3556, 4386, 8157, 9637]
+	
+	
+function getDigit(num, i) {
+  // using this function may be helpful. good luck!
+}
+
+function digitCount(num) {
+  // using this function may be helpful. good luck!
+}
+
+function mostDigits(nums) {
+  // using this function may be helpful. good luck!
+}
+
+function radixSort(nums) {
+  // good luck!
+}	
+
+
+///////////////////////////////////////////
+
+
+Stacks - push Exercise
+
+Implement the following methods on the Stack class
+
+push - takes in a node and puts it at the top of the stack. Should return the new size of the stack.
+
+    var stack = new Stack();
+     
+    stack.push(10) // 1
+    stack.first.value // 10
+    stack.last.value // 10
+    stack.push(100);
+    stack.first.value // 100
+    stack.last.value // 10
+    stack.push(1000);
+    stack.first.value // 1000
+    stack.last.value // 10
+     
+    var stack = new Stack();
+     
+    stack.push(10) // 1
+    stack.size // 1
+    stack.push(100) // 2
+    stack.size // 2
+    stack.push(1000) // 3
+    stack.size // 3
+
+
+///////////////////////////////////////////
+
+
+Stacks - pop Exercise
+
+Implement the following methods on the Stack class
+
+pop - removes the node at the top of the stack and returns the value of that node.
+
+Note: The tests for pop rely on push working (it has been implemented for you)
+
+    var stack = new Stack();
+     
+    stack.push(10);
+    stack.push(100);
+    stack.push(1000);
+    var removed = stack.pop();
+    removed // 1000
+    stack.size // 2
+    stack.pop();
+    stack.pop();
+    stack.size // 0
+
+
+///////////////////////////////////////////
+
+
+Stack with 2 Queues
+
+Implement a stack using two queues:
+
+You should implement the following functions:
+
+- push (returns the stack)
+
+- pop (returns the value popped)
+
+Comment on your time complexity for all of these operations:
+
+    var s = new Stack()
+    s.push(10).push(20).push(30)
+    s.pop() // 30
+    s.pop() // 20
+    s.pop() // 10
+    s.pop() // null
+    s.push(30).push(40).push(50)
+    s.pop() // 50
+    s.push(60)
+    s.pop() // 60
+
+
+///////////////////////////////////////////
+
+
+Queues - enqueue Exercise
+
+Implement the following methods on the Queue class.
+
+enqueue
+
+This function adds the value to the end of the queue. This should be an O(1) operation and return the new size of the queue.
+
+    var queue = new Queue();
+    queue.enqueue(10) // 1
+    queue.size // 1
+    queue.enqueue(100) // 2
+    queue.size // 2
+    queue.enqueue(1000) // 3
+    queue.size // 3
+
+
+///////////////////////////////////////////
+
+
+Binary Search Tree - insert Exercise
+
+Write a function on the BinarySearchTree class
+
+insert - accepts a value and inserts it into the BST in the correct position. The function should return the binary search tree. 
+
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree.insert(15);
+    binarySearchTree.insert(20);
+    binarySearchTree.insert(10);
+    binarySearchTree.insert(12);
+    binarySearchTree.root.value // 15
+    binarySearchTree.root.right.value // 20
+    binarySearchTree.root.left.right.value // 12
+     
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree
+        .insert(15)
+        .insert(20)
+        .insert(10)
+        .insert(12);
+    binarySearchTree.root.value // 15
+    binarySearchTree.root.right.value // 20
+    binarySearchTree.root.left.right.value // 12
+
+///////////////////////////////////////////
+
+BinarySearchTree - find
+
+Implement the following functions on the `BinarySearchTree.prototype`. insert has been implemented for you to help with testing.
+
+findIteratively
+
+This function should find a node in a binary tree. It should return the node if found, otherwise return `undefined`. This should be solved using iteration or recursion. The tests for this method assume that insertIteratively has been implemented correctly.
+
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree
+        .insert(15)
+        .insert(20)
+        .insert(10)
+        .insert(12);
+    var foundNode = binarySearchTree.find(20);
+    foundNode.value // 20
+    foundNode.left // null
+    foundNode.right // null
+     
+    var binarySearchTree = new BinarySearchTree();
+     
+    binarySearchTree
+        .insert(15)
+        .insert(20)
+        .insert(10)
+        .insert(12);
+    var foundNode = binarySearchTree.find(120);
+    foundNode // undefined
+
+///////////////////////////////////////////
+
+Binary Search Tree - DFS Exercise
+
+Implement the following functions on the BinarySearchTree.prototype. insert has been implemented for you to help with testing.
+
+DFSPreOrder
+
+This function should search through each node in the binary search tree using pre-order depth first search and return an array containing each node's value.
+
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree
+        .insert(15)
+        .insert(20)
+        .insert(10)
+        .insert(12)
+        .insert(1)
+        .insert(5)
+        .insert(50);
+    binarySearchTree.DFSPreOrder() // [15, 10, 1, 5, 12, 20, 50]
+
+DFSInOrder
+
+This function should search through each node in the binary search tree using in-order depth first search and return an array containing each node's value.
+
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree
+        .insert(15)
+        .insert(20)
+        .insert(10)
+        .insert(12)
+        .insert(1)
+        .insert(5)
+        .insert(50);
+    binarySearchTree.DFSInOrder() // [1, 5, 10, 12, 15, 20, 50]
+
+DFSPostOrder
+
+This function should search through each node in the binary search tree using post-order depth first search and return an array containing each node's value.
+
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree
+        .insert(15)
+        .insert(20)
+        .insert(10)
+        .insert(12)
+        .insert(1)
+        .insert(5)
+        .insert(50);
+    binarySearchTree.DFSPostOrder() // [5, 1, 12, 10, 50, 20, 15]
+
+
+///////////////////////////////////////////
+
+Binary Search Tree - BFS Exercise
+
+Implement the following function on the BinarySearchTree.prototype. insert is implemented to help with testing.
+
+breadthFirstSearch
+
+This function should search through each node in the binary search tree using breadth first search and return an array containing each node's value.
+
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree
+        .insert(15)
+        .insert(20)
+        .insert(10)
+        .insert(12)
+        .insert(1)
+        .insert(5)
+        .insert(50);
+    binarySearchTree.breadthFirstSearch() // [(15, 10, 20, 1, 12, 50, 5)];
+
+
+///////////////////////////////////////////
+
+Binary Search Tree - remove Exercise
+
+Implement the following function on the BinarySearchTree.prototype. insert is implemented to help with testing.
+
+remove
+
+This function should remove a node from a binary search tree. Your remove function should be able to handle removal of the root node, removal of a node with one child and removal of a node with two children. The function should return the node removed.
+
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree
+        .insert(15)
+        .insert(20)
+        .insert(10)
+        .insert(12)
+        .insert(1)
+        .insert(5)
+        .insert(50);
+    binarySearchTree.remove(50);
+    binarySearchTree.root.right.value // 20
+    binarySearchTree.root.right.right // null
+     
+    binarySearchTree.remove(5);
+    binarySearchTree.root.left.left.value // 1
+    binarySearchTree.root.left.left.right // null
+     
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree
+        .insert(15)
+        .insert(20)
+        .insert(10)
+        .insert(12)
+        .insert(1)
+        .insert(5)
+        .insert(50);
+     
+    binarySearchTree.remove(1);
+    binarySearchTree.root.left.left.value // 5
+    binarySearchTree.root.left.left.left // null
+    binarySearchTree.root.left.left.right // null
+     
+    binarySearchTree.remove(20);
+    binarySearchTree.root.right.value // 50
+    binarySearchTree.root.right.right // null
+    binarySearchTree.root.right.left // null
+     
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree
+        .insert(15)
+        .insert(20)
+        .insert(10)
+        .insert(12)
+        .insert(1)
+        .insert(5)
+        .insert(50)
+        .insert(60)
+        .insert(30)
+        .insert(25)
+        .insert(23)
+        .insert(24)
+        .insert(70);
+     
+    binarySearchTree.remove(10);
+    binarySearchTree.root.left.value // 12
+    binarySearchTree.root.left.left.value // 1
+    binarySearchTree.root.left.left.right.value // 5
+     
+    binarySearchTree.remove(50);
+    binarySearchTree.root.right.value // 20
+    binarySearchTree.root.right.right.value // 60
+    binarySearchTree.root.right.right.left.value // 30
+     
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree
+        .insert(22)
+        .insert(49)
+        .insert(85)
+        .insert(66)
+        .insert(95)
+        .insert(90)
+        .insert(100)
+        .insert(88)
+        .insert(93)
+        .insert(89)
+     
+    binarySearchTree.remove(85);
+    binarySearchTree.root.right.right.value // 88
+    binarySearchTree.root.right.right.right.left.left.value // 89
+
+///////////////////////////////////////////
+
+
+Binary Search Tree Exercise - Find 2nd largest node
+
+Write a function on the BinarySearchTree class
+
+insert - accepts a value and inserts it into the BST in the correct position. The function should return the binary search tree. 
+
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree.insert(15);
+    binarySearchTree.insert(20);
+    binarySearchTree.insert(10);
+    binarySearchTree.insert(12);
+    binarySearchTree.root.value // 15
+    binarySearchTree.root.right.value // 20
+    binarySearchTree.root.left.right.value // 12
+     
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree
+        .insert(15)
+        .insert(20)
+        .insert(10)
+        .insert(12);
+    binarySearchTree.root.value // 15
+    binarySearchTree.root.right.value // 20
+    binarySearchTree.root.left.right.value // 12
+
+///////////////////////////////////////////
+
+Binary Search Tree Exercise - Check if balanced
+
+Write a function on the BinarySearchTree class
+
+isBalanced - returns true if the BST is balanced, otherwise returns false.
+
+A balanced tree is defined as a tree where the depth of all leaf nodes or nodes with single children differ by no more than one.
+
+    var binarySearchTree = new BinarySearchTree();
+    binarySearchTree.insert(15);
+    binarySearchTree.insert(20);
+    binarySearchTree.insert(10);
+    binarySearchTree.insert(12);
+    binarySearchTree.isBalanced(); // true
+     
+    var binarySearchTree2 = new BinarySearchTree();
+    binarySearchTree2.insert(5);
+    binarySearchTree2.isBalanced(); // true
+    binarySearchTree2.insert(6);
+    binarySearchTree2.isBalanced(); // true
+    binarySearchTree2.insert(7);
+    binarySearchTree2.isBalanced(); // false
+
+
+
+
+
+///////////////////////////////////////////
+
+
+BinaryHeap - insert Exercise
+
+Implement the following functions on the maxBinaryHeap class
+
+insert
+
+Implement the `insert` function on the `MaxBinaryHeap.prototype`: This function should insert a node in a binary heap. Make sure to re-order the heap after insertion if necessary.
+
+    binaryHeap = new MaxBinaryHeap()
+    binaryHeap.insert(1)
+    binaryHeap.values[0] // 1
+     
+    binaryHeap.insert(2)
+    binaryHeap.values[0] // 2
+     
+    binaryHeap.values // [2, 1]
+     
+    binaryHeap.insert(3)
+    binaryHeap.values[0] // 3
+     
+    binaryHeap.values // [3, 1, 2]
+     
+    binaryHeap.insert(4)
+    binaryHeap.values[0] // 4
+     
+    binaryHeap.values // [4, 3, 2, 1]
+     
+    binaryHeap.insert(5)
+    binaryHeap.values[0] // 5
+     
+    binaryHeap.values // [5, 4, 2, 1, 3]
+     
+    binaryHeap.insert(6)
+    binaryHeap.values[0] // 6
+     
+    binaryHeap.values // [6, 4, 5, 1, 3, 2]
+
+///////////////////////////////////////////
+
+BinaryHeap - extractMax Exercise
+
+Implement the following functions on the maxBinaryHeap class
+
+extractMax
+
+Implement the `extractMax` function on the `MaxBinaryHeap.prototype`: This function should remove the root node in a binary heap. Make sure to re-order the heap after removal if necessary.
+
+    binaryHeap.insert(1)
+    binaryHeap.insert(2)
+    binaryHeap.insert(3)
+    binaryHeap.insert(4)
+    binaryHeap.insert(5)
+    binaryHeap.insert(6)
+    binaryHeap.extractMax()
+    binaryHeap.values[0] // 5
+     
+    binaryHeap.values // [5,4,2,1,3])
+     
+    binaryHeap.extractMax()
+    binaryHeap.values // [4,3,2,1])
+     
+    binaryHeap.extractMax()
+    binaryHeap.values // [3,1,2])
+
+
+///////////////////////////////////////////
+
+
+Graphs Exercise - addVertex
+
+Implement the following methods on the Graph class
+
+addVertex- this function should add a node to the graph and place a new key in the adjacency list with the value of an empty array.
+
+    var graph = new Graph;
+     
+    graph.addVertex('A');
+    graph.addVertex('B');
+    graph.addVertex('C');
+    graph.adjacencyList['A']; // []
+    graph.adjacencyList['B']; // []
+    graph.adjacencyList['C']; // []
+
+///////////////////////////////////////////
+
+
+Graphs Exercise - removeEdge
+
+Implement the following methods on the Graph class, addEdge and addVertex have been implemented for you.
+
+removeEdge - this function should accept two nodes and remove the edge between them. It should modify the adjacency list to ensure that both values are not in each array for the two nodes which no longer contain the edge.
+
+    var graph = new Graph();
+     
+    graph.addVertex('A');
+    graph.addVertex('B');
+    graph.addVertex('C');
+    graph.addVertex('D');
+     
+    graph.addEdge('A', 'B');
+    graph.addEdge('A', 'C');
+    graph.addEdge('B', 'D');
+    graph.addEdge('C', 'D');
+     
+    graph.removeEdge('B', 'A');
+    graph.removeEdge('C', 'D');
+     
+    graph.adjacencyList['A']; //  // contains 'C'
+    graph.adjacencyList['B']; // contains 'D'
+    graph.adjacencyList['C']; // contains 'A'
+    graph.adjacencyList['D']; // contains 'B'
+
+///////////////////////////////////////////
+
+
+Graphs Exercise - removeVertex
+
+Implement the following methods on the Graph class, removeEdge has been implemented for you.
+
+removeVertex - this function should remove the node in the array of nodes and also remove all edges that the removed node previously contained.
+
+    var graph = new Graph();
+     
+    graph.addVertex('A');
+    graph.addVertex('B');
+    graph.addVertex('C');
+    graph.addVertex('D');
+     
+    graph.addEdge('A', 'B');
+    graph.addEdge('A', 'C');
+    graph.addEdge('B', 'D');
+    graph.addEdge('C', 'D');
+     
+    graph.removeVertex('C');
+    graph.removeVertex('B');
+     
+    graph.adjacencyList['A']; // still exists
+    graph.adjacencyList['D']; // still exists
+
+///////////////////////////////////////////
+
+
+Graphs - DFS Exercise
+
+Implement the following method on the Graph class:
+
+depthFirstSearch - this function should return an array of nodes visited using DFS. You can do this iteratively (using a stack) or recursively, but note the order of the results will be different. The test cases should accommodate this.
+
+    var graph = new Graph();
+     
+    graph.addVertex('S');
+    graph.addVertex('P');
+    graph.addVertex('U');
+    graph.addVertex('X');
+    graph.addVertex('Q');
+    graph.addVertex('Y');
+    graph.addVertex('V');
+    graph.addVertex('R');
+    graph.addVertex('W');
+    graph.addVertex('T');
+     
+    graph.addEdge('S','P');
+    graph.addEdge('S','U');
+     
+    graph.addEdge('P','X');
+    graph.addEdge('U','X');
+     
+    graph.addEdge('P','Q');
+    graph.addEdge('U','V');
+     
+    graph.addEdge('X','Q');
+    graph.addEdge('X','Y');
+    graph.addEdge('X','V');
+     
+    graph.addEdge('Q','R');
+    graph.addEdge('Y','R');
+     
+    graph.addEdge('Y','W');
+    graph.addEdge('V','W');
+     
+    graph.addEdge('R','T');
+    graph.addEdge('W','T');
+     
+    graph.depthFirstSearch('S');
+     
+    /**
+     * results:
+     *
+     * ["S", "P", "X", "U", "V", "W", "Y", "R", "Q", "T"] // recursive version
+     * ["S", "U", "V", "W", "T", "R", "Q", "Y", "X", "P"] // iterative (stack) version
+     *
+     **/
+
+///////////////////////////////////////////
+
+Graphs Exercise - addEdge
+
+Implement the following methods on the Graph class - addVertex has been implemented for you
+
+addEdge - this function should add an edge between two nodes in the graph and place each value of the nodes in each array for the value of the node in the adjacency list.
+
+    var graph = new Graph();
+     
+    graph.addVertex('A');
+    graph.addVertex('B');
+    graph.addVertex('C');
+    graph.addVertex('D');
+     
+    graph.addEdge('A', 'B');
+    graph.addEdge('A', 'C');
+    graph.addEdge('B', 'D');
+    graph.addEdge('C', 'D');
+     
+    graph.adjacencyList['A']; // contains both ('B', 'C')
+    graph.adjacencyList['B']; // contains both ('A', 'D')
+    graph.adjacencyList['C']; // contains both ('A', 'D')
+    graph.adjacencyList['D']; // contains both ('C', 'B')
+
+
+
+///////////////////////////////////////////
+
+Graphs - BFS Exercise
+
+Implement the following methods on the Graph class:
+
+breadthFirstSearch - this function should return an array of vertices visited using BFS.
+
+    var graph = new Graph();
+     
+    graph.addVertex('S');
+    graph.addVertex('P');
+    graph.addVertex('U');
+    graph.addVertex('X');
+    graph.addVertex('Q');
+    graph.addVertex('Y');
+    graph.addVertex('V');
+    graph.addVertex('R');
+    graph.addVertex('W');
+    graph.addVertex('T');
+     
+    graph.addEdge('S','P');
+    graph.addEdge('S','U');
+     
+    graph.addEdge('P','X');
+    graph.addEdge('U','X');
+     
+    graph.addEdge('P','Q');
+    graph.addEdge('U','V');
+     
+    graph.addEdge('X','Q');
+    graph.addEdge('X','Y');
+    graph.addEdge('X','V');
+     
+    graph.addEdge('Q','R');
+    graph.addEdge('Y','R');
+     
+    graph.addEdge('Y','W');
+    graph.addEdge('V','W');
+     
+    graph.addEdge('R','T');
+    graph.addEdge('W','T');
+     
+    graph.breadthFirstSearch('S'); // ["S", "P", "U", "X", "Q", "V", "Y", "R", "W", "T"]
+
+///////////////////////////////////////////
+
+Graphs - Dijkstra Exercise
+
+Create a constructor function for a WeightedGraph. It should inherit from the Graph constructor and have all the same methods except for adding an edge. Since weights will now be added with edges, the adjacency list should not only store the nodes which are connected to it but also the corresponding weight of the edge.
+
+A PriorityQueue has been implemented for you. The PriorityQueue adds the LOWEST priority first (this is helpful for Dijkstra).
+
+Implement the following method on the WeightedGraph.prototype
+
+Dijkstra - this function should return an array with two values, the first being the total distance and the second an array of nodes which create the shortest path.
+
+    var g = new WeightedGraph()
+     
+    g.addVertex('A');
+    g.addVertex('Z');
+    g.addVertex('C');
+    g.addVertex('D');
+    g.addVertex('E');
+    g.addVertex('H');
+    g.addVertex('Q');
+    g.addVertex('G');
+     
+    g.addEdge('A', 'Z', 7)
+    g.addEdge('A', 'C', 8)
+     
+    g.addEdge('Z', 'Q', 2)
+     
+    g.addEdge('C', 'G', 4)
+     
+    g.addEdge('D', 'Q', 8)
+     
+    g.addEdge('E', 'H', 1)
+     
+    g.addEdge('H', 'Q', 3)
+     
+    g.addEdge('Q', 'C', 6)
+     
+    g.addEdge('G', 'Q', 9)
+     
+    g.Dijkstra('A','E') // ["A", "Z", "Q", "H", "E"]
+    g.Dijkstra('A','Q') // ["A", "Z", "Q"]
+    g.Dijkstra('A','G') // ["A", "C", "G"]
+    g.Dijkstra('A','D') // ["A", "Z", "Q", "D"]
+
+///////////////////////////////////////////
+
+
+Dynamic Programming - Coin Change
+
+Write a function called coinChange which accepts two parameters: an array of denominations and a value. The function should return the number of ways you can obtain the value from the given collection of denominations. You can think of this as figuring out the number of ways to make change for a given value from a supply of coins.
+
+Examples:
+
+    const denominations = [1, 5, 10, 25]
+     
+    coinChange(denominations, 1) // 1
+    coinChange(denominations, 2) // 1
+    coinChange(denominations, 5) // 2
+    coinChange(denominations, 10) // 4
+    coinChange(denominations, 25) // 13
+    coinChange(denominations, 45) // 39
+    coinChange(denominations, 100) // 242
+    coinChange(denominations, 145) // 622
+    coinChange(denominations, 1451) // 425663
+    coinChange(denominations, 14511) // 409222339
+     
+
+///////////////////////////////////////////
+
+
+Coin Change - Greedy Algorithm
+
+///////////////////////////////////////////
+
+Frequency Counter - constructNote
+
+Write a function called constructNote, which accepts two strings, a message and some letters. The function should return true if the message can be built with the letters that you are given, or it should return false.
+
+Assume that there are only lowercase letters and no space or special characters in both the message and the letters.
+
+Bonus Constraints:
+
+If M is the length of message and N is the length of letters:
+
+Time Complexity: O(M+N)
+
+Space Complexity: O(N)
+
+Examples:
+
+    constructNote('aa', 'abc') // false
+    constructNote('abc', 'dcba') // true
+    constructNote('aabbcc', 'bcabcaddff') // true
+
+///////////////////////////////////////////
+
+
+Frequency Counter - findAllDuplicates
+
+Given an array of positive integers, some elements appear twice and others appear once. Find all the elements that appear twice in this array. Note that you can return the elements in any order.
+
+    findAllDuplicates([4,3,2,7,8,2,3,1]) // array with 2 and 3
+    findAllDuplicates([4, 3, 2, 1, 0]) // []
+    findAllDuplicates([4, 3, 2, 1, 0, 1, 2, 3]) // array with 3, 2, and 1
+
+Time Complexity - O(n)
+
+///////////////////////////////////////////
+
+
+Frequency Counter / Multiple Pointer - findPair
+
+Given an unsorted array and a number n, find if there exists a pair of elements in the array whose difference is n. This function should return true if the pair exists or false if it does not.
+
+    findPair([6,1,4,10,2,4], 2) // true
+    findPair([8,6,2,4,1,0,2,5,13],1) // true
+    findPair([4,-2,3,10],-6) // true
+    findPair([6,1,4,10,2,4], 22) // false
+    findPair([], 0) // false
+    findPair([5,5], 0) // true
+    findPair([-4,4], -8) // true
+    findPair([-4,4], 8) // true
+    findPair([1,3,4,6],-2) // true
+    findPair([0,1,3,4,6],-2) // true
+
+Part 1 - solve this with the following requirements:
+
+Time Complexity Requirement - O(n)
+
+Space Complexity Requirement - O(n)
+
+Part 2 - solve this with the following requirements:
+
+Time Complexity Requirement - O(n log n)
+
+Space Complexity Requirement - O(1)
+
+///////////////////////////////////////////
+
+class Trie {
+    constructor() {
+        this.characters = {};
+        this.isWord = false;
+    }
+    addWord(word, index = 0) {
+    }
+}
+
+
+
+Trie Exercise - addWord
+
+This function should add the given word starting from the given index to the Trie.
+
+It will be recursive and notify the correct child of this Trie to add the word starting from a later index.
+
+Consider what the add function should do when it reaches the end of the word as a word does not necessarily end at a leaf.
+
+You must mark nodes which are the ends of words so that the words can be reconstructed later.
+
+    var firstTrie = new Trie();
+    firstTrie.addWord("fun")
+    firstTrie.characters // {f: Trie}
+    !!firstTrie.characters["f"] // true
+     
+    firstTrie.characters.f.characters.u // {u: Trie}
+    !!firstTrie.characters.f.characters.u // true
+     
+    firstTrie.characters.f.characters.u.characters.n.isWord // true
+    !!firstTrie.characters.f.characters.u.characters.n // true
+    !!firstTrie.characters.f.characters.u.characters.n.characters // {}
+     
+    !!firstTrie.characters.f.characters.u.characters.l // true
+     
+    var secondTrie = new Trie();
+    secondTrie.addWord("ha")
+    secondTrie.addWord("hat")
+    secondTrie.addWord("has")
+    secondTrie.addWord("have")
+    secondTrie.addWord("hate")
+     
+    secondTrie.characters.h.characters.a.isWord // true
+    secondTrie.characters.h.characters.a.characters.t.isWord // true
+    secondTrie.characters.h.characters.a.characters.v.isWord // false
+    secondTrie.characters.h.characters.a.characters.v.characters.e.isWord // true
+    secondTrie.characters.h.characters.a.characters.t.characters.e.isWord // true
+     
+    Object.keys(secondTrie.characters.h.characters.a.characters).length // 3
+
+///////////////////////////////////////////
+
+class Trie {
+    constructor() {
+        this.characters = {};
+        this.isWord = false;
+    }
+    addWord(word, index = 0) {
+        if (index === word.length) {
+            this.isWord = true;
+        } else if (index < word.length) {
+            var char = word[index];
+            var subTrie = this.characters[char] || new Trie();
+            subTrie.addWord(word, index + 1);
+            this.characters[char] = subTrie;
+        }
+        return this;
+    }
+
+    findWord(word, index = 0) {
+        // This function will return the node in the trie
+        // which corresponds to the end of the passed in word.
+
+        // Be sure to consider what happens if the word is not in this Trie.
+
+        var char = word[index];
+        if (index < word.length - 1 && this.characters[char]) {
+            index += 1;
+            return this.characters[char].findWord(word, index);
+        } else {
+            return this.characters[char];
+        }
+    }
+    getWords(words = [], currentWord = "") {
+        // This function will return all the words which are
+        // contained in this Trie.
+        // it will use currentWord as a prefix,
+        // since a Trie doesn't know about its parents.
+
+        if (this.isWord) {
+            words.push(currentWord);
+        }
+        for (var char in this.characters) {
+            var nextWord = currentWord + char;
+            this.characters[char].getWords(words, nextWord);
+        }
+        return words;
+    }
+    autoComplete(prefix) {
+        // This function will return all completions
+        // for a given prefix.
+        // It should use find and getWords.
+        var subTrie = this.find(prefix);
+        if (subTrie) {
+            return subTrie.getWords([], prefix);
+        } else {
+            return [];
+        }
+    }
+    removeWord(word) {
+    }
+}
+
+
+===========================
+
+Trie Exercise - removeWord
+
+Write a function called removeWord which accepts a string and removes the word from the Trie. addWord is implement to help you test the function.
+
+    var t = new Trie();
+    t.addWord('fun')
+    t.addWord('fast')
+    t.addWord('fat')
+    t.addWord('fate')
+    t.addWord('father')
+    t.addWord('forget')
+    t.addWord('awesome')
+    t.addWord('argue')
+     
+     
+    t.removeWord('fat')
+    t.characters.f.characters.a.characters.t.isWord // false
+    t.characters.f.characters.a.characters.t.characters.e.isWord // true
+     
+    t.removeWord('argue')
+     
+    t.characters.a.characters.r // undefined
+
+
+
+///////////////////////////////////////////
+
+class Trie {
+    constructor() {
+        this.characters = {};
+        this.isWord = false;
+    }
+    addWord(word, index = 0) {
+        if (index === word.length) {
+            this.isWord = true;
+        } else if (index < word.length) {
+            var char = word[index];
+            var subTrie = this.characters[char] || new Trie();
+            subTrie.addWord(word, index + 1);
+            this.characters[char] = subTrie;
+        }
+        return this;
+    }
+
+    findWord(word, index = 0) {
+        
+    }
+}
+
+
+===========================
+
+Trie Exercise - findWord
+
+Write a function called findWord which accepts a string and returns the characters object for the last character in that word if the string is a word in the Trie, otherwise it returns undefined. Try to solve this without having to find every single word in the Trie. addWord is implement to help you test the function.
+
+    var t = new Trie();
+    t.addWord('fun')
+    t.addWord('fast')
+    t.addWord('fat')
+    t.addWord('fate')
+    t.addWord('father')
+     
+    t.findWord('taco') // undefined
+    t.findWord('fat').characters // {t: Trie}
+    t.findWord('father').characters // {}
+    t.findWord('father').isWord // true
+
+
+///////////////////////////////////////////
+
+class Trie {
+    constructor() {
+        this.characters = {};
+        this.isWord = false;
+    }
+    addWord(word, index = 0) {
+        if (index === word.length) {
+            this.isWord = true;
+        } else if (index < word.length) {
+            var char = word[index];
+            var subTrie = this.characters[char] || new Trie();
+            subTrie.addWord(word, index + 1);
+            this.characters[char] = subTrie;
+        }
+        return this;
+    }
+    getWords(words = [], currentWord = ""){
+        
+    }
+}
+
+
+==============================
+
+
+
+Trie Exercise - getWords
+
+Write a function on the Trie.prototype called getWords which returns an array of all of the words in the Trie.
+
+    var t = new Trie();
+    t.addWord('fun')
+    t.addWord('fast')
+    t.addWord('fat')
+    t.addWord('fate')
+    t.addWord('father')
+    t.addWord('forget')
+    t.addWord('awesome')
+    t.addWord('argue')
+     
+    t.getWords() // ["fun", "fast", "fat", "fate", "father", "forget", "awesome", "argue"]
+     
+    t.getWords().length // 8
+
+
+
+///////////////////////////////////////////
+
+class Trie {
+    constructor() {
+        this.characters = {};
+        this.isWord = false;
+    }
+    addWord(word, index = 0) {
+        if (index === word.length) {
+            this.isWord = true;
+        } else if (index < word.length) {
+            var char = word[index];
+            var subTrie = this.characters[char] || new Trie();
+            subTrie.addWord(word, index + 1);
+            this.characters[char] = subTrie;
+        }
+        return this;
+    }
+
+    findWord(word, index = 0) {
+        var char = word[index];
+        if (index < word.length - 1 && this.characters[char]) {
+            index += 1;
+            return this.characters[char].findWord(word, index);
+        } else {
+            return this.characters[char];
+        }
+    }
+    getWords(words = [], currentWord = "") {
+
+        if (this.isWord) {
+            words.push(currentWord);
+        }
+        for (var char in this.characters) {
+            var nextWord = currentWord + char;
+            this.characters[char].getWords(words, nextWord);
+        }
+        return words;
+    }
+    autoComplete(prefix) {
+       
+    }
+}
+
+
+================================
+
+
+Trie - autocomplete
+
+Write a function on the trie class which accepts a string and returns an array of all the possible options in the trie for that string.
+
+    var t = new Trie();
+    t.addWord('fun')
+    t.addWord('fast')
+    t.addWord('fat')
+    t.addWord('fate')
+    t.addWord('father')
+    t.addWord('forget')
+    t.addWord('awesome')
+    t.addWord('argue')
+     
+    t.autocomplete('fa') // ["fast","fat", "fate", "father"] 
+    t.autoComplete('a') // ["awesome", "argue"]
+    t.autoComplete('arz') // []
+
+///////////////////////////////////////////
+
+
+
+///////////////////////////////////////////
