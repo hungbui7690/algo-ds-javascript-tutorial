@@ -1,6 +1,7 @@
 /*
   Selection Sort
   - We can see that the selection sort is slightly better than bubble sort (need to do less swap)
+
   - Worst: O(n^2)
 
 */
@@ -11,6 +12,8 @@ const swap = (arr, idx1, idx2) => {
   return ([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]])
 }
 
+// Add 2 more items: 0, 2
+// We can clearly see that in the first 2 loops, we still do the swap to itself
 console.log([0, 2, 5, 3, 4, 1, 2])
 
 const selectionSort = (arr) => {
@@ -28,12 +31,8 @@ const selectionSort = (arr) => {
       if (arr[min] > arr[j]) min = j
     }
 
-    // Add this to make the swap in case it has different
-    console.log(i, min)
-    if (i !== min) swap(arr, min, i)
-
     console.log(arr)
-    console.log('*************')
+    console.log('****************************')
   }
   return arr
 }

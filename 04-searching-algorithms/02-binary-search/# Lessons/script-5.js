@@ -77,6 +77,7 @@
 
 'use strict'
 
+// For Loop
 const naiveSearch = (long, short) => {
   let count = 0
   let j = 0

@@ -1,7 +1,17 @@
 /*
   Insertion Sort
-  - If we put the condition in the if clause, but not in the condition of the for loop like below:
-        if (arr[j] > currentVal)
+  - Previous Lesson: count = 8
+        for (let i = 1; i < arr.length; i++) {
+          for (let j = i - 1; j >= 0 && arr[j] > currentVal; j--)
+
+          
+  - This Lesson: count = 10
+        for (let i = 1; i < arr.length; i++)
+          for (let j = i - 1; j >= 0; j--)
+            if (arr[j] > currentVal)
+
+
+  - If we put the condition in the if clause, but not in the condition of the for loop:
     + It will take more iteration
     + We can see from previous lesson, at the end count=8
     + But this lesson, we use if clause, count=10

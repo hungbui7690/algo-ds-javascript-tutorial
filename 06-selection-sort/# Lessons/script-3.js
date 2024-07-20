@@ -28,7 +28,7 @@ const selectionSort = (arr) => {
       if (arr[min] > arr[j]) min = j
     }
 
-    // Add this to make the swap in case it has different
+    // *** Add this to make the swap in case it has different
     console.log(i, min)
     if (i !== min) swap(arr, min, i)
 
