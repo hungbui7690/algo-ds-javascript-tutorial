@@ -1,12 +1,9 @@
 /*
-  
-//////////////////////////////////////////////////////////
-
   Class Methods
-  - sử dụng keywork static 
-  - ko thể gọi bằng instance 
-  - đc ko mà ko cần phải instantiate
-  - giống utility functionv
+  - use "static" keyword
+  - can not call using instance
+  - exec without instantiation
+  - similar to util functions
 
 */
 
