@@ -1,31 +1,28 @@
-'use strict'
 /*
-
-//////////////////////////////////////////////////////
-
-  INSERT
-  - có thể sử dụng interative hoặc recursive 
+  Insert 
+  - can use interactive or recursive
   - steps: 
-    + tạo node
-    + check xem phải root ko
-      > nếu chưa có root thì nó là root
-      > nếu có root rồi thì check lớn nhỏ 
-        + Nếu lớn hơn thì sang phải 
-        + nhỏ hơn sang trái 
-          > check có node chưa
-            + có thì sang trái hoặc phải 
-            + chưa có thì tạo node
+    + create node
+    + check if it is root or not
+      > if not has root -> it is root
+      > if has root -> check if that element is greater or less than root
+        * greater -> right
+        * small -> left
+        * check if right/left has node or not 
+          - not: create new node 
+          - has: continue move to left or right
 
-  - Insert 33
+  *************
+  Insert 33
             10        
         5        13
               12     15
 
-
-  - có root rồi >> đi bên phải 
-  - so sánh với 13 >> đi bên phải 
-  - so sanh 15 >> đi bên phải
-  - chưa có node >> tạo node
+  - has root
+  - 33 > 10 -> right
+  - 33 > 13 -> right 
+  - 33 > 15 -> right 
+  - not has node -> create node
 
             10        
         5        13
@@ -46,37 +43,34 @@ class BinarySearchTree {
     this.root = null
   }
 
-  // (***) sử dụng while loop
   insert(value) {
-    // (1)
+    // create new node
     const newNode = new Node(value)
 
-    // (2)
+    // not has root
     if (!this.root) {
       this.root = newNode
       return this
     }
 
-    // (3)
+    // has root
     let current = this.root
 
-    // (4)
     while (true) {
-      // (a)
+      // left
       if (value < current.value) {
+        // has node on the left
         if (current.left) current = current.left
         else {
+          // not has node on the left
           current.left = newNode
           return this
         }
-      }
-      // (b)
-      else if (current.value === value) {
+        // already exist
+      } else if (current.value === value) {
         return this
-      }
-
-      // (c)
-      else {
+        // right
+      } else {
         if (current.right) current = current.right
         else {
           current.right = newNode
@@ -89,11 +83,11 @@ class BinarySearchTree {
 
 const tree = new BinarySearchTree()
 
-// (***)
 tree.insert(30)
 tree.insert(10)
 tree.insert(15)
-tree.insert(10) // thử insert trùng xem sao
+tree.insert(10) // try to insert the same value
+tree.insert(5)
 tree.insert(50)
 
 /*

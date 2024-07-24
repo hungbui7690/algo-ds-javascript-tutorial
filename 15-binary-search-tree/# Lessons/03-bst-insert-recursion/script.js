@@ -1,31 +1,18 @@
-'use strict'
 /*
+  Insert
+  - using recursion
 
-//////////////////////////////////////////////////////
-
-  INSERT
-  - có thể sử dụng interative hoặc recursive 
-  - steps: 
-    + tạo node
-    + check xem phải root ko
-      > nếu chưa có root thì nó là root
-      > nếu có root rồi thì check lớn nhỏ 
-        + Nếu lớn hơn thì sang phải 
-        + nhỏ hơn sang trái 
-          > check có node chưa
-            + có thì sang trái hoặc phải 
-            + chưa có thì tạo node
-
-  - Insert 33
+  *************
+  Insert 33
             10        
         5        13
               12     15
 
-
-  - có root rồi >> đi bên phải 
-  - so sánh với 13 >> đi bên phải 
-  - so sanh 15 >> đi bên phải
-  - chưa có node >> tạo node
+  - has root
+  - 33 > 10 -> right
+  - 33 > 13 -> right 
+  - 33 > 15 -> right 
+  - not has node -> create node
 
             10        
         5        13
@@ -46,16 +33,15 @@ class BinarySearchTree {
     this.root = null
   }
 
-  // (***) recursion
   insert(node, value) {
-    // (a) chưa có root
+    // not has root
     if (!this.root) {
       const newNode = new Node(value)
       this.root = newNode
       return this
     }
 
-    // (b) sang trái
+    // left
     if (value < node.value) {
       if (node.left) {
         this.insert(node.left, value)
@@ -65,9 +51,9 @@ class BinarySearchTree {
         return this
       }
     }
-    // (c) đã tồn tại
+    // already exist
     else if (value === node.value) return this
-    // (d) sang phải
+    // right
     else {
       if (node.right) {
         this.insert(node.right, value)
@@ -82,12 +68,12 @@ class BinarySearchTree {
 
 const tree = new BinarySearchTree()
 
-// (***)
 tree.insert(tree.root, 30)
 tree.insert(tree.root, 10)
 tree.insert(tree.root, 5)
 tree.insert(tree.root, 15)
-tree.insert(tree.root, 10) // thử insert trùng xem sao
+tree.insert(tree.root, 10) // try to insert the same value
+tree.insert(tree.root, 5)
 tree.insert(tree.root, 50)
 /*
           30

@@ -1,23 +1,31 @@
-'use strict'
 /*
+  Binary Heap
+  - pic
+  - is a category in tree
+  - conditions:
+    + parent node always greater than children nodes
+    + no order between siblings
+            41
+        39      33
+      18  27  12
 
-//////////////////////////////////////////////////////
+  - NOT a Binary Heap => Binary Search Tree
+            33
+        18      41
+      12  27   39
+  
 
-  HEAPS
-  - heap là 1 category trong tree
-  - max binary heap: 
-    + parent lớn hơn children 
-    + ko quan tâm tới sự lớn nhỏ của siblings
-  - min binary heap: ngược lạiv 
-  - luôn luôn lưu data vào child bên trái trước 
+  - Min Binary Heap: opposite
+  @@ always save data into left child
 
 
-  STORE HEAPS >> PIC
-  - có index của parent, tìm children 
-    + 2n + 1 (LEFT CHILD)
-    + 2n + 2 (RIGHT CHILD)
-
-  - có index child, tìm parent 
+******************
+  Store Heaps
+  - pic
+  - from parent's index => find children's index
+    + Left Child: 2n + 1 
+    + Right Child: 2n + 2 
+  - from children's index => find parent's index
     + (n - 1) / 2
 
 */

@@ -1,36 +1,26 @@
-'use strict'
 /*
+  Info
+  - pic
+  - stacks is just concept (FILO)
 
-  INFO
-  - pics
-  - stacks chỉ là concept (FILO)
-
-  CREATE STACKS USING ARRAY
-  - chỉ có thể sử dụng 1 trong 2 cách để tạo stack với array: 
-    + push() + pop() 
-    + unshift() + shift() >>> nhưng cách này ko tốt, vì chúng ta phải reindex
-
+  Create Stacks Using Array
+  - use any method below to create stack with array
+    + push + pop
+    + unshift + shift => but this method is not good, because we need to re-index
 
 */
 
-//////////////////////////////////////////////////////
-
 class Stack {
-  // (a)
   constructor(value) {
     this.items = []
-    this.length = 0 // ko dùng length này cũng đc >> có thể sử dụng this.items.length
+    this.length = 0 // or cannot use length or can use this.items.length
   }
-
-  // (b)
   push(element) {
     this.items.push(element)
     this.length++
 
     return this
   }
-
-  // (c)
   pop() {
     if (this.items.length > 0) {
       this.length--
@@ -39,22 +29,16 @@ class Stack {
     return undefined
   }
 
-  // (d) peek the last item in the stack
+  // peek the last item in the stack
   peek() {
-    return this.items[this.length - 1] // hoặc this.items[this.items.length -1]
+    return this.items[this.length - 1] // or this.items[this.items.length -1]
   }
-
-  // (e)
   isEmpty() {
     return this.length == 0
   }
-
-  // (f) the size of the stack
   size() {
     return this.length
   }
-
-  // (g)
   clear() {
     this.items = []
   }
@@ -64,7 +48,9 @@ const stack = new Stack()
 stack.push(10)
 stack.push(20)
 stack.push(30)
+console.log(stack)
 
 console.log(stack.peek()) // 30
-console.log(stack.peek()) // 30
+console.log(stack.pop()) // 30
 console.log(stack.pop()) // 20
+console.log(stack.pop()) // 10

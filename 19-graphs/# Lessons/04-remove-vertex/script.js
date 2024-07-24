@@ -1,14 +1,80 @@
 'use strict'
 /*
-
-//////////////////////////////////////////////////////
-
-  REMOVE VERTEX
-  - phải tìm ra và remove connection (edge) trước 
-  - rồi sau đó mới remove vertex
+  Remove Vertex
+  - must find and remove connection (edge) first
+  - then remove vertex
 
 
 
+****************
+  - Demo: 
+      adjacencyList = {
+        "Tokyo" : ["Dallas"],
+        "Dallas" : ["Tokyo", "Aspen"],
+        "Aspen" : ["Dallas"]
+      }
+
+      (Tokyo) <-> (Dallas) <-> (Aspen)
+
+
+
+  - removeVertex("Dallas")
+    + Step 1: go to "Dallas" => then pop the last value = Aspen
+
+        adjacencyList = {
+          "Tokyo" : ["Dallas"],
+          "Dallas" : ["Tokyo"],
+          "Aspen" : []
+        }
+
+      (Tokyo) <-> (Dallas) <- (Aspen)
+
+
+
+    + Step 2: call removeEdge("Dallas", "Aspen")
+
+        adjacencyList = {
+          "Tokyo" : ["Dallas"],
+          "Dallas" : ["Tokyo"],
+          "Aspen" : []
+        }
+
+      (Tokyo) <-> (Dallas)    (Aspen)
+
+
+
+    + Step 3: continue to pop from "Dallas" => "Tokyo"
+
+        adjacencyList = {
+          "Tokyo" : ["Dallas"],
+          "Dallas" : [],
+          "Aspen" : []
+        }
+
+      (Tokyo) <- (Dallas)    (Aspen)
+
+
+
+    + Step 4: call removeEdge("Dallas", "Tokyo")
+
+        adjacencyList = {
+          "Tokyo" : [],
+          "Dallas" : [],
+          "Aspen" : []
+        }
+
+      (Tokyo)   (Dallas)    (Aspen)
+
+    
+
+    + Step 5: delete this.adjacencyList[vertex]
+
+        adjacencyList = {
+          "Tokyo" : [],
+          "Aspen" : []
+        }
+
+      (Tokyo)   (Aspen)
 */
 
 class Graph {
@@ -28,14 +94,12 @@ class Graph {
     this.adjacencyList[v2] = this.adjacencyList[v2].filter((v) => v !== v1)
   }
 
-  // (1)
   removeVertex(vertex) {
-    // (***) (a) xoá hết connections
     while (this.adjacencyList[vertex].length) {
-      const adjacenVertex = this.adjacencyList[vertex].pop()
-      this.removeEdge(vertex, adjacenVertex)
+      const adjacentVertex = this.adjacencyList[vertex].pop()
+      this.removeEdge(vertex, adjacentVertex)
     }
-    // (b) xoá vertex
+
     delete this.adjacencyList[vertex]
   }
 }
@@ -55,7 +119,6 @@ graph.addEdge('Hongkong', 'Dallas')
 graph.addEdge('Los Angeles', 'Hongkong')
 graph.addEdge('Los Angeles', 'Aspen')
 
-// (2)
 graph.removeVertex('Hongkong')
 graph.removeVertex('Aspen')
 

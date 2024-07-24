@@ -1,10 +1,50 @@
-'use strict'
 /*
-
-//////////////////////////////////////////////////////
-
-  EXTRACT MAX (REMOVE FROM A HEAP/ REMOVE THE ROOT/ DELETE ROOT)
+  Extract Max
   - pic
+  - also known as "remove root", "bubble down", "sink down", "sift down", "heapify down", "cascade down"
+
+
+  **********************
+  Remove the root of this max heap: [(41) 39 33 18 27 12]
+            (41)          
+        39       33
+      18  27   12
+
+
+  ++++++++++++++
+  - Swap root with last (smallest) element: [<12> 39 33 18 27 (41)]
+            <12>          
+        39         33
+      18  27   (41)
+
+
+  ++++++++++++++
+  - Pop root => max => 41 => [<12> 39 33 18 27]
+            <12>
+        39       33
+      18 27   
+
+
+  ++++++++++++++
+  LOOP
+  - Children: 39 < 33
+  - Swap 12 with 39 
+  => [39 12 33 18 27]
+            39
+        <12>    33
+      18   27   
+
+
+  ++++++++++++++
+  - Children: 27 > 18
+  - Swap: 12 with 27
+  => [39 27 33 18 12]
+            39
+        27      33
+      18 <12>  
+
+  - 12 doesn't have any child that is larger than 12 => STOP
+
 
 */
 
@@ -38,21 +78,19 @@ class MaxBinaryHeap {
     return this
   }
 
-  // (***)
   extractMax() {
-    // (a)
     function swap(arr, idxA, idxB) {
       ;[arr[idxA], arr[idxB]] = [arr[idxB], arr[idxA]]
     }
 
-    // (b) tìm index của left child
+    // find left child index
     const findLeftChildIndex = (index) => {
       return index * 2 + 1 < this.items.length ? index * 2 + 1 : undefined
     }
 
-    // (c) so sánh 2 thằng child, lấy index của thằng lớn hơn
+    // compare 2 children => use the larger one
     const findLargerChildIndex = (leftChildIndex, rightChildIndex) => {
-      // (***) trường hợp 1 trong 2 thằng bị undefined
+      // either one is undefined
       if (!this.items[leftChildIndex] && this.items[rightChildIndex])
         return rightChildIndex
       if (this.items[leftChildIndex] && !this.items[rightChildIndex])
@@ -63,37 +101,35 @@ class MaxBinaryHeap {
         : rightChildIndex
     }
 
-    // (***) trường hợp đặc biệt, nếu chỉ có 1 item duy nhất
     if (this.items.length === 1) return this.items.pop()
     if (this.items.length === 0) return undefined
 
-    // (***) đầu tiên vô, chúng ta sẽ swap root với last item
+    // first, swap root with last item in the array
     swap(this.items, 0, this.items.length - 1)
 
-    // (***) sau đó swap thì xoá thằng root (hiện nằm ở cuối)
+    // second, after swap, remove the root
     const max = this.items.pop()
 
-    // (***)
     let adjIndex = 0
     let leftChildIndex = findLeftChildIndex(0)
     let rightChildIndex = leftChildIndex + 1
 
-    // (***) sẽ loop nếu như thằng root mới lớn hơn 2 thằng child
+    // loop if the new root is greater than the 2 children
     while (
       this.items[adjIndex] <
       this.items[findLargerChildIndex(leftChildIndex, rightChildIndex)]
     ) {
-      // (i) phải lưu biến này lại, nếu ko thì sau khi swap xong, function này sẽ ra sai
+      // must save this, otherwise after swap, function will go wrong
       let largerIdx = findLargerChildIndex(leftChildIndex, rightChildIndex)
 
-      // (ii) thực hiện swap
+      // do the swap
       swap(
         this.items,
         adjIndex,
         findLargerChildIndex(leftChildIndex, rightChildIndex)
       )
 
-      // (iii) set lại index
+      // reset the index
       adjIndex = largerIdx
       leftChildIndex = findLeftChildIndex(adjIndex)
       rightChildIndex = leftChildIndex + 1
@@ -132,9 +168,8 @@ const maxHeap = new MaxBinaryHeap()
 // console.log(maxHeap.extractMax()) // undefined
 // console.log(maxHeap.items) // []
 
-////////////////////////////////////////////
-// Nhớ test khúc dưới đây: phải chắc chắn khi extract sẽ lấy đc từ lớn tới nhỏ
-
+// *********************
+// make sure it will extract from large item to small item
 maxHeap.insert(1)
 maxHeap.insert(5)
 maxHeap.insert(2)

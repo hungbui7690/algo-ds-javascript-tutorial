@@ -1,48 +1,59 @@
 'use strict'
 /*
+  Dijkstra's Algorithms - Intro
+  - requirement: must understand Graph & Priority Queue
+  - now, our graph does not have weighted, so it's hard to measure 
+    => must change to Weighted Graph
 
-//////////////////////////////////////////////////////
 
-  DIJKSTRA'S ALGORITHMS - INTRO
-  - REQUIREMENT: phải hiểu rõ Graph và Priority Queue
-  - hiện tại graph của chúng ta chưa có weighted, nên khó thể measure >> phải biến thành Weighted Graph
-
-  WEIGHTED GRAPH
-  - bên dưới
 */
 
-// (1)
 class WeightedGraph {
   constructor() {
-    this.adjacencyList = {}
-  }
-  addVertex(vertex) {
-    if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = []
-    return this.adjacencyList[vertex]
+    this.adjList = {}
   }
 
-  // (***) ở trên y chang, tới chỗ này sẽ khác vì có thêm weight
+  /* 
+  adjList = {
+      "A": [
+        {node : B, weight : 4},
+        {node : C, weight : 2}
+      ]
+      "B" : [
+        {node : A, weight : 4},
+      ],
+      "C" : [
+        {node : A, weight : 2},
+      ]
+  }
+*/
+
+  addVertex(vertex) {
+    if (!this.adjList[vertex]) this.adjList[vertex] = []
+    return this.adjList[vertex]
+  }
+
+  // # add weight
   addEdge(vertex1, vertex2, weight) {
-    // (***) lúc này phải store vào object
-    this.adjacencyList[vertex1].push({
+    this.adjList[vertex1].push({
       node: vertex2,
-      weight,
+      weight, // #
     })
-    this.adjacencyList[vertex2].push({
+    this.adjList[vertex2].push({
       node: vertex1,
-      weight,
+      weight, // #
     })
   }
   removeEdge(v1, v2) {
-    this.adjacencyList[v1] = this.adjacencyList[v1].filter((v) => v !== v2)
-    this.adjacencyList[v2] = this.adjacencyList[v2].filter((v) => v !== v1)
+    this.adjList[v1] = this.adjList[v1].filter((v) => v !== v2)
+    this.adjList[v2] = this.adjList[v2].filter((v) => v !== v1)
   }
   removeVertex(vertex) {
-    while (this.adjacencyList[vertex].length) {
-      const adjacenVertex = this.adjacencyList[vertex].pop()
-      this.removeEdge(vertex, adjacenVertex)
+    while (this.adjList[vertex].length) {
+      const adjVertex = this.adjList[vertex].pop()
+      this.removeEdge(vertex, adjVertex)
     }
-    delete this.adjacencyList[vertex]
+    delete this.adjList[vertex]
   }
 }
 
@@ -51,7 +62,6 @@ weightedGraph.addVertex('A')
 weightedGraph.addVertex('B')
 weightedGraph.addVertex('C')
 
-// (***)
 weightedGraph.addEdge('A', 'B', 9)
 weightedGraph.addEdge('A', 'C', 5)
 weightedGraph.addEdge('B', 'C', 7)

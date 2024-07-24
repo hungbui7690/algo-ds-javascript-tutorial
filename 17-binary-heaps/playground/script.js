@@ -1,14 +1,41 @@
 'use strict'
 /*
+  Priority Queue - Min Heap
+  - now, we change to min heap (the smallest will be the root)
+  - later, we can have one more condition when we have 2 tasks with same priorities
+    + add this.time = Date.now() in the class Node
+    + if the priorities are same, we can compare the Date Time
 
-//////////////////////////////////////////////////////
 
-  PRIORITY QUEUE
-  - lần này chúng ta sẽ đổi thành min heap (tức là thằng nhỏ nhất sẽ nằm trên)
-    > chỉ cần đổi lớn hơn thành nhỏ hơn là xong
+  ******************
+  BIG O
+  - Insertion:    O(logN)
+  - Removal:      O(logN)
+  - Search:       O(N)
 
-  >> xong xuống kiểm tra chỗ dequeue() xem ra kết quả đúng hay ko 
-  >> có lấy đc từ priority cao nhất tới priority thấp nhất hok 
+  => Insert & Removal with Binary Heap is ok, but when searching is O(N) 
+  => There's no way to change, this is the disadvantage of Heap
+
+  ******************
+  Why LogN
+  - Suppose we have this array: [100 19 36 17 12 25 5 9 15 6 11 13 8 1 4]
+  - We want to insert 200
+  -> We have 16 elements => 4 comparisons
+
+  ******************
+  Worst Case: 
+  - Remember thisDepressing Tree
+        3
+          17
+            19
+              32
+                34
+                  63
+                    86
+                      91
+
+  - Heap doesn't care about this situation 
+    => Worst Case still O(LogN)
 
 */
 
@@ -16,6 +43,7 @@ class Node {
   constructor(value, priority) {
     this.data = value
     this.priority = priority
+    // this.date = Date.now()
   }
 }
 

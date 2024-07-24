@@ -1,10 +1,42 @@
 'use strict'
 /*
+  Add Edge
+  - pic
 
-//////////////////////////////////////////////////////
 
-  ADD EDGE 
-  - check PIC
+*****************
+  Demo: In the graph, we have these vertexes
+  - adjacencyList = {
+      "Tokyo" : [],
+      "Dallas" : [],
+      "Aspen" : [],
+    }
+
+      (Tokyo)   (Dallas)    (Aspen)
+
+
+  ++++++++++
+  - addEdge(v1, v2) = add("Tokyo", "Dallas") 
+    => when we add edge to these vertex => Both vertexes will contain each other
+
+      adjacencyList = {
+        "Tokyo" : ["Dallas"],
+        "Dallas" : ["Tokyo"],
+        "Aspen" : [],
+      }
+
+      (Tokyo) <-> (Dallas)    (Aspen)
+
+
+  - add("Dallas", "Aspen")
+
+      adjacencyList = {
+        "Tokyo" : ["Dallas"],
+        "Dallas" : ["Tokyo", "Aspen"],
+        "Aspen" : ["Dallas"]
+      }
+
+      (Tokyo) <-> (Dallas) <-> (Aspen)
 
 */
 
@@ -17,7 +49,7 @@ class Graph {
     return this.adjacencyList[vertex]
   }
 
-  // (1) chưa cần check, chưa cần handle err
+  // no need to check for existance => no need to handle error
   addEdge(v1, v2) {
     this.adjacencyList[v1].push(v2)
     this.adjacencyList[v2].push(v1)
@@ -30,7 +62,6 @@ graph.addVertex('Dallas')
 graph.addVertex('Aspen')
 graph.addVertex('Seoul')
 
-// (2)
 graph.addEdge('Tokyo', 'Dallas')
 graph.addEdge('Dallas', 'Aspen')
 

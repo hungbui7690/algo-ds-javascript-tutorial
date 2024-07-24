@@ -1,32 +1,39 @@
 'use strict'
 /*
-
-//////////////////////////////////////////////////////
-
-  DEPTH FIRST SEARCH
-    + IN-ORDER
+  Depth First Search
+  - InOrder:
+    - result will the sorted
+    
+  *******************
+  function traverse(node)
+    if (node.left) traverse(node.left)
+    visited.push(node.value)
+    if (node.right) traverse(node.right)
   
-////////////////////////////////////
-  Kết quả mong muốn: 
-  - [3 6 8 10 15 20]
+  *******************
+  Demo:
+  - Result we want: [3 6 8 10 15 20] => in-order
 
             10
       6           15
     3   8            20   
 
-  - trái >> giữa >> phải
+  - left mid right
 
-//////////////////////////////////// 
-
-  WHICH ONE? 
+  ***********************
+  Which One Should We Use
   - pic
-  - DFS dùng cho tree rộng
-  - BFS dùng cho tree cao 
-    >> đỡ tốn memory
+  - DFS is used for wide tree 
+  - BFS is used for deep tree
+  - less memory efficient 
 
-  - InOrder dùng để tạo ra sorted array 
-  - PreOrder sẽ giúp chúng ta lưu đc structure của tree, dễ lưu vào db và lấy ra 
-  - PostOrder: vô dụng ???? 
+  
+  - InOrder 
+    + used to create sorted array
+  - PreOrder: 
+    + save the structure of the tree
+    + easy to save into db and take out
+  + PostOrder: ??
 
 */
 
@@ -134,15 +141,11 @@ class BinarySearchTree {
     return visited
   }
 
-  // (1)
   DFSInOrder() {
     const visited = []
     function traverse(node) {
       if (node.left) traverse(node.left)
-
-      // (***) dời vô giữa
       visited.push(node.value)
-
       if (node.right) traverse(node.right)
     }
     traverse(this.root)

@@ -1,24 +1,19 @@
 'use strict'
 /*
-  - Sử dụng Linked List (Singly/Doubly) đều đc 
-  - chúng ta sẽ bưng bên LL sang đây và apply, nhưng: 
-    + ko sử dụng pop() và push() >> vì phải traverse từ đầu tới cuối
-    + thay vào đó chúng ta sẽ sử dụng unshift() và shift() >> nhưng tên vẫn đặt là push() + pop() 
-      - thực ra tên cũng có thể đặt là add và remove, nhưng nên sử dụng push và pop 
-
-//////////////////////////////////////////////////////
-
+  Use LinkedList
+  - We can use SinglyLinkedList or DoublyLinkedList
+  - shouldn't use pop & push -> O(n)
+  - instead of that, we use shift & unshift => but still use the name of push & pop
+  
   BIG O 
   - Insertion: O(1)
   - Removal: O(1)
-
   - Search: O(N)
   - Access: O(N)
-    > Search và Access ko quan trọng, bởi vì nếu muốn Search và Access >> nên sử dụng Array chứ ko cần Stack làm gì
+    + Search & Access is not important -> because if we want to Search & Access, we should use Array
 
 */
 
-// (1)
 class Node {
   constructor(data) {
     this.data = data
@@ -26,16 +21,13 @@ class Node {
   }
 }
 
-// (2)
 class Stack {
-  // (a)
   constructor() {
     this.head = null
     this.tail = null
     this.length = 0
   }
 
-  // (b)
   push(value) {
     const newNode = new Node(value)
 
@@ -54,7 +46,6 @@ class Stack {
     return newNode
   }
 
-  // (c)
   pop() {
     if (!this.head || !this.tail) return null
 

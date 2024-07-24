@@ -1,12 +1,54 @@
 'use strict'
 /*
+  Remove Vertex
+  - must find and remove connection (edge) first
+  - then remove vertex
 
-//////////////////////////////////////////////////////
 
-  REMOVE VERTEX
-  - phải tìm ra và remove connection (edge) trước 
-  - rồi sau đó mới remove vertex
+****************
+  - Demo: 
+      adjacencyList = {
+        "Tokyo" : ["Dallas"],
+        "Dallas" : ["Tokyo", "Aspen"],
+        "Aspen" : ["Dallas"]
+      }
 
+
+  - removeVertex("Dallas")
+    + Step 1: go to "Dallas" => then pop the last value = Aspen
+
+        adjacencyList = {
+          "Tokyo" : ["Dallas"],
+          "Dallas" : ["Tokyo"],
+          "Aspen" : []
+        }
+
+
+    + Step 2: call removeEdge("Dallas", "Aspen")
+
+        adjacencyList = {
+          "Tokyo" : ["Dallas"],
+          "Dallas" : ["Tokyo"],
+          "Aspen" : []
+        }
+
+
+    + Step 3: continue to pop from "Dallas" => "Tokyo"
+
+        adjacencyList = {
+          "Tokyo" : ["Dallas"],
+          "Dallas" : [],
+          "Aspen" : []
+        }
+
+
+    + Step 4: call removeEdge("Dallas", "Tokyo")
+
+        adjacencyList = {
+          "Tokyo" : [],
+          "Dallas" : [],
+          "Aspen" : []
+        }
 
 
 */
@@ -28,14 +70,12 @@ class Graph {
     this.adjacencyList[v2] = this.adjacencyList[v2].filter((v) => v !== v1)
   }
 
-  // (1)
   removeVertex(vertex) {
-    // (***) (a) xoá hết connections
     while (this.adjacencyList[vertex].length) {
-      const adjacenVertex = this.adjacencyList[vertex].pop()
-      this.removeEdge(vertex, adjacenVertex)
+      const adjacentVertex = this.adjacencyList[vertex].pop()
+      this.removeEdge(vertex, adjacentVertex)
     }
-    // (b) xoá vertex
+
     delete this.adjacencyList[vertex]
   }
 }
@@ -55,7 +95,6 @@ graph.addEdge('Hongkong', 'Dallas')
 graph.addEdge('Los Angeles', 'Hongkong')
 graph.addEdge('Los Angeles', 'Aspen')
 
-// (2)
 graph.removeVertex('Hongkong')
 graph.removeVertex('Aspen')
 

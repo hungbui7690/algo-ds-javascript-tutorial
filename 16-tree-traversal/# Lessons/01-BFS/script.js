@@ -1,67 +1,106 @@
-'use strict'
 /*
-
-//////////////////////////////////////////////////////
-
   BREATH FIRST SEARCH
-  - sử dụng queue (dùng tạm array để tạo queue cho nhanh):
-    + để chứa node (keep track) mà chúng ta đã visit 
-  - thêm 1 list chứa kết quả trả về
-  - apply dequeue và push vào để sao cho kết quả ra đúng nhất 
-  - bắt đầu từ root 
+  - a tree traversal
+  - use queue (use temp array to create fast queue)
+    => to save the node (keep track) that we visited
+    => apply dequeue & push 
+  - add 1 list to save the return result: visited[]
+  - start from root
 
 
-  Kết quả mong muốn: 
-  - [10 6 15 3 8 20]
-
+  ******************
+  Demo
+  - Tree: 
             10
       6           15
     3   8            20   
 
-  (1)
-  queue   [10]
-  visited []
+  - Result that we want: [10 6 15 3 8 20]
 
+  +++++++
+  Step 1: put root node into queue
+  - queue.push(this.root)
 
-            10
+            (10)
       6           15
     3   8            20   
+
+  - queue     [10]
+  - visited   []
   
-  (2)
-  - Có gì trong queue ko
-    + có:
-      > dequeue
-      > bỏ vào visit  
-      > kiểm tra xem bên trái thằng đó có node hay ko:
-        + nếu có thì add vào queue
-      > kiểm tra bên phải có node hay ko: 
-        + nếu có thì add vào queue
+  +++++++
+  Step 2: while (!queue.isEmpty())
+  - dequeue = queue.dequeue()
+  - visited.push(dequeue)      
+  - if (dequeue.left) queue.push(dequeue.left)
+  - if (dequeue.right) queue.push(dequeue.right)
+      
+              10
+      (6)           (15)
+    3   8               20  
 
-  queue   [6, 15]
-  visited [10]    
+  queue     [6, 15]
+  visited   [10]     
 
-  (3)
-  - dequeue 6 + bỏ vào visited 
-  - check left và right của 6 
+  +++++++ 
+  - dequeue = 6
+  - visited.push(6)      
+  - queue.push(3)
+  - queue.push(8)
 
-  queue   [15, 3, 8]
-  visited [10, 6]   
+            10
+        6       (15)
+    (3)   (8)        20  
 
-  (4)
-  queue   [3, 8, 20]
-  visited [10, 6, 15]    
+  queue     [15, 3, 8]
+  visited   [10, 6]   
 
-  (5)
-  queue   [8, 20]
-  visited [10, 6, 15, 3]    
+  +++++++ 
+  Step 4
+  - dequeue = 15
+  - visited.push(15)      
+  - queue.push(20)
+            10
+        6       15
+    (3)   (8)      (20)  
 
-  (6)
-  queue   [20]
-  visited [10, 6, 15, 3, 8]    
+  queue     [3, 8, 20]
+  visited   [10, 6, 15]    
 
-  (7) done
-  queue   []
-  visited [10, 6, 15, 3, 8, 20]    
+  +++++++ 
+  Step 5
+  - dequeue = 3
+  - visited.push(3)      
+            10
+        6       15
+      3     (8)    (20)  
+
+  queue     [8, 20]
+  visited   [10, 6, 15, 3]    
+
+  +++++++ 
+  Step 6 
+  - dequeue = 8
+  - visited.push(8)     
+            10
+        6       15
+      3     8     (20)  
+
+  queue     [20]
+  visited   [10, 6, 15, 3, 8]    
+
+  +++++++ 
+  Step 7
+  - dequeue = 20
+  - visited.push(20)     
+            10
+        6       15
+      3     8      20
+
+  queue     []
+  visited   [10, 6, 15, 3, 8, 20]    
+
+  => Now, queue is empty => Done
 
 */
 
@@ -73,7 +112,6 @@ class Node {
   }
 }
 
-// (1)
 class Queue {
   constructor() {
     this.items = []
@@ -133,32 +171,24 @@ class BinarySearchTree {
     }
   }
 
-  // (2) check mô tả ở trên
   BFS() {
-    // (a) instantiate
-    const queue = new Queue()
+    const queue = new Queue() // create queue
 
-    // (b) đây là array trả về
-    let visited = []
+    let visited = [] // result array
 
-    // (c) nếu tree empty
+    // in case tree is empty
     if (!this.root) return []
 
-    // (d) bỏ root vào queue
     queue.push(this.root)
 
-    // (e)
     while (!queue.isEmpty()) {
-      // (i) dequeue và bỏ vào visited
-      const dequeue = queue.dequeue()
-      visited.push(dequeue)
+      const dequeue = queue.dequeue() // dequeue
+      visited.push(dequeue) // add to visited []
 
-      // (ii) nếu bên trái / phải có thì bỏ vào queue
+      // if left/right has node => push
       if (dequeue.left) queue.push(dequeue.left)
       if (dequeue.right) queue.push(dequeue.right)
     }
-
-    // (f)
     return visited
   }
 }
@@ -173,8 +203,8 @@ tree.insert(50)
 tree.insert(5)
 /*
           30
-    10          50
-  5   15
+      10      50
+    5   15
 */
 
 console.log(tree.BFS()) // [30 10 50 5 15]
@@ -183,10 +213,10 @@ tree.insert(17)
 tree.insert(39)
 tree.insert(45)
 /*
-            30
-    10              50
-  5   15        39
-        17        45
+          30
+    10          50
+  5   15     39
+        17      45
 */
 
 console.log(tree.BFS()) // [30 10 50 5 15 39 17 45]

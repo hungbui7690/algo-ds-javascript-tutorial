@@ -1,56 +1,54 @@
 'use strict'
 /*
+  Depth First Search
+  - Post Order: 
+    > go down to bottom left
+    > from left to right
+    > after finish, then go up
 
-//////////////////////////////////////////////////////
 
-  DEPTH FIRST SEARCH
-    + POST ORDER
-  
-////////////////////////////////////
-  Kết quả mong muốn: 
-  - [3 8 6 20 15 10]
+  ********************
+  function traverse(node) 
+    if (node.left) traverse(node.left)
+    if (node.right) traverse(node.right)
+    visited.push(node.value)
+    
+  ********************
+  Demo:
+  - Result we want: [3 8 6 20 15 10]
 
             10
       6           15
-    3   8            20   
+    3   8            20    
 
-//////////////////////////////////// 
+  Step 1:
+  - start at 10
+  - go down to 6
+  - left of 6 is 3
+  - right of 6 is 8
+  - result = [3, 8]
 
-  (1)
-  - start ở 10 
-  - đi xuống 6 
-  - trái của 6 là 3, phải là 8 
+  Step 2:
+  - After finish left & right of 6 => then add 6 => this is why we call Post Order
+  - result = [3, 8, 6]
 
-  [3, 8]
-
-
-  (2)
-  - sau khi xong trái và phải của 6 thì mới add 6 
-    > (***) đây là lý do vì sao gọi là post order
-
-  [3, 8, 6]
-
-
-  (3)
-  - lên 10, giờ tới bên phải của 10 
-  - tới 15 
-  - bên trái 15 ko có >> bên phải là 20 
-
-  [3, 8, 6, 20]
+  Step 3:
+  - Go back to 10, now to the right of 10
+  - go down to 15
+  - left of 15 has nothing
+  - right of 15 is 20
+  - result = [3, 8, 6, 20]
   
-  
-  (4)
-  - xong trái phải của 15 
-  
-  [3, 8, 6, 20, 15]
-  
-  
-  (5)
-  - xong trái phải của 10 
-  
-  [3, 8, 6, 20, 15, 10]
+  Step 4:
+  - Done left & right of 15 => then add 15  
+  - result = [3, 8, 6, 20, 15]
 
-  >> CHECK HẾT CHILDRED TRƯỚC PARENT
+  Step 5:   
+  - Done left & right of 10 => then add 10
+  - result =   [3, 8, 6, 20, 15, 10]
+
+  @@ Add all children before add parent
+
 */
 
 class Node {
@@ -137,11 +135,13 @@ class BinarySearchTree {
   }
   DFSPreOrder() {
     let visited = []
+
     function traverse(node) {
       visited.push(node.value)
       if (node.left) traverse(node.left)
       if (node.right) traverse(node.right)
     }
+
     if (!this.root) return []
     traverse(this.root)
     return visited
@@ -156,15 +156,12 @@ class BinarySearchTree {
 
 */
 
-  // (1)
   DFSPostOrder() {
     const visited = []
 
     function traverse(node) {
       if (node.left) traverse(node.left)
       if (node.right) traverse(node.right)
-
-      // (***) y chang bài trước, chỉ đem dòng này xuống dưới
       visited.push(node.value)
     }
 

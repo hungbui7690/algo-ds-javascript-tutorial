@@ -1,10 +1,7 @@
-'use strict'
 /*
-
-//////////////////////////////////////////////////////
-
-  BREATH FIRST RECURSIVE
-  - 
+  Breath First Traverse - Iterative
+  - exactly the same to DF => but use queue instead of stack
+  - BF -> queue
 
 */
 
@@ -25,26 +22,26 @@ class Queue {
 
 class Graph {
   constructor() {
-    this.adjacencyList = {}
+    this.adjList = {}
   }
   addVertex(vertex) {
-    if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = []
-    return this.adjacencyList[vertex]
+    if (!this.adjList[vertex]) this.adjList[vertex] = []
+    return this.adjList[vertex]
   }
   addEdge(v1, v2) {
-    this.adjacencyList[v1].push(v2)
-    this.adjacencyList[v2].push(v1)
+    this.adjList[v1].push(v2)
+    this.adjList[v2].push(v1)
   }
   removeEdge(v1, v2) {
-    this.adjacencyList[v1] = this.adjacencyList[v1].filter((v) => v !== v2)
-    this.adjacencyList[v2] = this.adjacencyList[v2].filter((v) => v !== v1)
+    this.adjList[v1] = this.adjList[v1].filter((v) => v !== v2)
+    this.adjList[v2] = this.adjList[v2].filter((v) => v !== v1)
   }
   removeVertex(vertex) {
-    while (this.adjacencyList[vertex].length) {
-      const adjacenVertex = this.adjacencyList[vertex].pop()
-      this.removeEdge(vertex, adjacenVertex)
+    while (this.adjList[vertex].length) {
+      const adjVertex = this.adjList[vertex].pop()
+      this.removeEdge(vertex, adjVertex)
     }
-    delete this.adjacencyList[vertex]
+    delete this.adjList[vertex]
   }
   depthFirstRecursive(v) {
     const results = []
@@ -55,7 +52,7 @@ class Graph {
         visited[vertex] = true
         results.push(vertex)
 
-        const neighbors = this.adjacencyList[vertex]
+        const neighbors = this.adjList[vertex]
         neighbors.forEach((v) => {
           DFS(v)
         })
@@ -64,7 +61,7 @@ class Graph {
     DFS(v)
     return results
   }
-  depthFirstInterative(vertex) {
+  depthFirstIterative(vertex) {
     const results = []
     const visited = []
     const stack = []
@@ -75,7 +72,7 @@ class Graph {
         results.push(pop)
         visited[pop] = true
       }
-      const neighbors = this.adjacencyList[pop]
+      const neighbors = this.adjList[pop]
       for (let i = 0; i < neighbors.length; i++) {
         if (!visited[neighbors[i]]) stack.push(neighbors[i])
       }
@@ -84,23 +81,28 @@ class Graph {
     return results
   }
 
-  breathFirstInterative(vertex) {
+  // similar to above, but use queue instead of stack
+  breathFirstIterative(vertex) {
     const queue = new Queue()
     const results = []
     const visited = {}
+
     queue.enqueue(vertex)
 
     while (queue.size() !== 0) {
       const pop = queue.dequeue()
+
       if (!visited[pop]) {
         results.push(pop)
         visited[pop] = true
       }
-      const neighbors = this.adjacencyList[pop]
+
+      const neighbors = this.adjList[pop]
       for (let i = 0; i < neighbors.length; i++) {
         if (!visited[neighbors[i]]) queue.enqueue(neighbors[i])
       }
     }
+
     return results
   }
 }
@@ -130,4 +132,5 @@ graph.addEdge('E', 'F')
         F
 */
 
-console.log(graph.breathFirstInterative('A'))
+// ['A', 'B', 'C', 'D', 'E', 'F']
+console.log(graph.breathFirstIterative('A'))

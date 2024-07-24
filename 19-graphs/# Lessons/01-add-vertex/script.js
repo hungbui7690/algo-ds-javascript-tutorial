@@ -1,70 +1,73 @@
-'use strict'
 /*
-
-//////////////////////////////////////////////////////
-
-  GRAPHS - INTRO
-  - sử dụng rộng rãi: 
-    + social network
-    + netflix recommend fim 
+  Intro
+  - used widely: 
+    + social networking
+    + netflix recommended films
     + ...
 
-///////////////////////////////////////////////
-
-  USAGE
-  - PIC
+******************
+  Graph Usage
+  - pic
   > https://musicmap.info/
 
-///////////////////////////////////////////////
+******************
 
-  TYPES OF GRAPHS
-  - PIC (check kỹ)
+  Types of Graphs
+  - terminology
+  - pic
 
-///////////////////////////////////////////////
+******************
+  Storing Graphs - Adjacency Matrix
+  - pic
 
-  STORING GRAPHS ADJACENCY MATRIX
-  - PIC
+******************
+  Adjacency List
+  - pic
 
-  ADJACENCY LIST
-  - PIC
-
+******************
   BIG-O
-  - PIC
+  - pic
 
-///////////////////////////////////////////////
+******************
+  Add Vertex
+  - pic
+  - add vertex to adjacency list
+  - each vertex is key-value pair
 
-  ADD VERTEX
-  - PIC
+******************
+  Demo: graph.addVertex("tokyo") 
+  => add to adjacencyList={}
+  
+  - Check if adjacencyList contains that vertex or not 
+    + If vertex not in adjacencyList => create key-value pair => then return that vertex
 
-  - cấu trúc graph: mỗi vertex là key:value pair
+        adjacencyList = {
+          "tokyo" : []
+        }
 
-  this.adjacencyList = {
-    "tokyo" : [],
-    "seoul" : []
-  }
+  - Because we return existed vertex => we can use chaining 
+      graph.addVertex('Tokyo').push('food')
+
+        ['food']
 
 */
 
-// (1)
 class Graph {
-  // (a)
   constructor() {
     this.adjacencyList = {}
   }
 
-  // (b)
   addVertex(vertex) {
-    // (***)  !this.adjacencyList[vertex] chứ ko phải !this.adjacencyList >> check xem vertex đó đã có hay chưa
+    // check if vertex exists or not
     if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = []
 
     return this.adjacencyList[vertex]
   }
 }
 
-// (2)
 const graph = new Graph()
 graph.addVertex('Tokyo').push('food')
 graph.addVertex('Seoul')
-graph.addVertex('Tokyo') // ko overwrite thằng trước đó
+console.log(graph.addVertex('Tokyo')) // not overwrite the prev one
 
 console.log(graph)

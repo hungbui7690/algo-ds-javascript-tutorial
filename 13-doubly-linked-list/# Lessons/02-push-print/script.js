@@ -1,28 +1,69 @@
 'use strict'
 /*
-  > https://visualgo.net/en/list
+  Push + Print
+  - pic
+
+  *************
+  Empty 
+  - head = tail = null
+      head -> null <- tail
+
+  - push(10)
+                head
+                  ↓
+    null <- pre |10| next -> null
+                  ↑
+                tail
+    
+
+  *************
+  Only 1 item
+              head
+                ↓
+    null <- pre |10| next -> null
+                ↑
+              tail
+
+  +++++++
+  push(20)
+                head
+                  ↓
+    null <- pre |10| next -> null
+                  ↑
+                tail
 
 
-  INTRO 
-  - db-linked-list-picture
-
-  NODE
-  - có thêm prev
-
-//////////////////////////////////////////////
-
-  PUSH (PIC)
+  +++++++
+  - newNode.prev = this.tail => set newNode.pre = previous node
+                head
+                  ↓
+    tail <- pre |10| next <- pre |20| next -> null
+                  ↑    ↓
+                tail  null
 
 
-  */
+  - this.tail.next = newNode
+                head
+                  ↓
+    tail <- pre |10| next <-> pre |20| next -> null
+                  ↑
+                tail
 
-//////////////////////////////////////////////////////
+
+    this.tail = newNode
+                head
+                  ↓
+    tail <- pre |10| next <-> pre |20| next -> null
+                                    ↑
+                                  tail
+
+*/
 
 class Node {
   constructor(val) {
     this.data = val
     this.next = null
-    this.prev = null // (***) có thêm prev
+    this.prev = null
   }
 }
 
@@ -33,12 +74,10 @@ class DoublyLinkedList {
     this.tail = null
   }
 
-  // (1)
   push(val) {
-    // (a) tạo node
     const newNode = new Node(val)
 
-    // (b) nếu chưa có item nào
+    // case 1: no item
     if (!this.head || !this.tail) {
       this.head = newNode
       this.tail = newNode
@@ -49,22 +88,32 @@ class DoublyLinkedList {
       return this
     }
 
-    // (b) trường hợp có item trong list
+    // case 2: has item
     newNode.prev = this.tail
-    newNode.next = null // ko cần bước này cũng đc, do mặc định new node là null
+    newNode.next = null // no need this step > since default newNode.next is null
 
-    // (c) set tail link tới new node
     this.tail.next = newNode
-
-    // (d) dời tail sang node mới
     this.tail = newNode
 
-    // (e)
     this.length++
     return this
   }
 
-  // (2)
+  traverse() {
+    let result = ''
+    let count = 0
+    let current = this.head
+    console.log(current)
+
+    console.log('**********************')
+    while (current) {
+      result += count === 0 ? current.data : ' <-> ' + current.data
+      current = current.next
+      console.log(current)
+      count++
+    }
+    console.log(result)
+  }
   print() {
     let currentNode = this.head
     const arr = []
@@ -80,8 +129,8 @@ class DoublyLinkedList {
 
 const list = new DoublyLinkedList()
 
-// (3)
 list.push(10)
 list.push(20)
 list.push(30)
 list.print()
+list.traverse()

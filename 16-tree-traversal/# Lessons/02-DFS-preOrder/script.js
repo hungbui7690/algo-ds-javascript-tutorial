@@ -1,47 +1,71 @@
 'use strict'
 /*
-
-//////////////////////////////////////////////////////
-
   DEPTH FIRST SEARCH
-  - đều đi từ trên xuống
-  - có 3 loại:
-    + PRE ORDER (bài này)
-    + POST ORDER
-    + INORDER
-  - recursive
+  - go from top to bottom
+  - 3 types: 
+    + Pre Order: go all the left side, then right side => this lesson
+    + Post Order
+    + In Order
+  - recursion
 
-////////////////////////////////////
-  Kết quả mong muốn: 
-  - [10 6 3 8 15 20]
+  ******************
+            10
+      6           15
+    3   8            20   
+  1  4
 
+
+  function traverse(node) {
+    visited.push(node.value)
+    if (!node.left && !node.right) return
+    if (node.left) traverse(node.left)
+    if (node.right) traverse(node.right)
+  }
+
+
+                                traverse(10)
+                traverse(6)             traverse(15)
+      traverse(3)       traverse(8)           traverse(20)
+  traverse(1) traverse(4)     ↓                    ↓      
+      ↓           ↓         return               return
+    return       return
+
+
+  **********************
+  Demo:
+  - Result we want: [10 6 3 8 15 20]
+  
             10
       6           15
     3   8            20   
 
-//////////////////////////////////// 
-  
-  
-  - đi hết bên trái, rồi đi bên phải
+  - Create result array: 
+      visited     []
 
-  (1)
-  visited [10]
-  
-  (2) bên trái của 10
-  visited [10, 6]
+  ++++++
+  Step 1: add root to visited array
+  - visited     [10]
 
-  (3) bên trái của 6
-  visited [10, 6, 3]
+  ++++++
+  Step 2: left side of 10 
+    visited     [10, 6]
 
-  (4) 3 hết >> đi bên phải của 6
-  visited [10, 6, 3, 8]
+  ++++++
+  Step 3: left side of 6
+    visited [10, 6, 3]
 
-  (5) hết bên trái của 10, đi bên phải của 10
-  visited [10, 6, 3, 8, 15]
+  ++++++
+  Step 4: 3 has no left child => go to right side of 6
+    visited [10, 6, 3, 8]
 
-  (6) 
-  visited [10, 6, 3, 8, 15, 20]
-  
+  ++++++
+  Step 5: 8 has no left child => go right side of 10
+    visited [10, 6, 3, 8, 15]
+
+  ++++++
+  Step 6: 
+    visited [10, 6, 3, 8, 15, 20]
+
 
 */
 
@@ -134,27 +158,21 @@ class BinarySearchTree {
     3   8            20   
 */
 
-  // (1)
   DFSPreOrder() {
-    // (a)
     let visited = []
 
-    // (***)
     function traverse(node) {
-      visited.push(node.value)
-      // của instructor ko có dòng này
+      visited.push(node)
+
       if (!node.left && !node.right) return
       if (node.left) traverse(node.left)
       if (node.right) traverse(node.right)
     }
 
-    // (b)
     if (!this.root) return []
 
-    // (c)
     traverse(this.root)
 
-    // (d)
     return visited
   }
 }
