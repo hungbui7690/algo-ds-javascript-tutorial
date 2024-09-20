@@ -42,7 +42,7 @@ class SinglyLinkedList {
 
     console.log('**********************')
     while (current) {
-      result += count === 0 ? current.data : ' -> ' + current.data
+      result += count === 0 ? current.val : ' -> ' + current.val
       current = current.next
       count++
     }
